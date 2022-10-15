@@ -1,26 +1,30 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/Ubuntu/Ubuntu-Regular.ttf");
+  font-weight: normal;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/Ubuntu/Ubuntu-Light.ttf");
+  font-weight: 300;
 }
 
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/Ubuntu/Ubuntu-Medium.ttf");
+  font-weight: bolder;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/Ubuntu/Ubuntu-Bold.ttf");
+  font-weight: bold;
 }
