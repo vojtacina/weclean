@@ -8,7 +8,7 @@
 @font-face {
   font-family: "Ubuntu";
   src: url("../assets/Ubuntu/Ubuntu-Regular.ttf");
-  font-weight: normal;
+  font-weight: 500;
 }
 
 @font-face {
@@ -20,11 +20,11 @@
 @font-face {
   font-family: "Ubuntu";
   src: url("../assets/Ubuntu/Ubuntu-Medium.ttf");
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "Ubuntu";
   src: url("../assets/Ubuntu/Ubuntu-Bold.ttf");
-  font-weight: bold;
+  font-weight: 900;
 }

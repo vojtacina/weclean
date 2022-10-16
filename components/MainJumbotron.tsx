@@ -7,9 +7,9 @@ export default function MainJumbotron() {
 
     return (
         <div className=" w-full relative flex items-center justify-start">
-            <Image src="/bg.jpg" blurDataURL="/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+            <Image src="/images/bg.jpg" blurDataURL="/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className="absolute left-4 top-4">
-                <Image src="/weclean-logo.png" width={100} height={28} alt="WeClean logo společnosti" />
+                <Image src="/images/weclean.png" width={162} height={37} alt="WeClean logo společnosti" />
             </div>
             <div className="pt-24 pb-5 md:pt-32 md:pb-24 lg:py-48  text-white w-full z-10">
                 <MaxWidthWrapper>

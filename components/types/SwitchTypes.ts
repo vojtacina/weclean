@@ -7,5 +7,6 @@ export interface SwitchDataType {
 
 export interface SwitchOptionType {
     label: string,
-    value: string
+    value: string,
+    description?: string
 }
