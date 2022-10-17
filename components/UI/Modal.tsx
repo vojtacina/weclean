@@ -14,7 +14,7 @@ export default function Modal({children, close}:ModalProps) {
     useOnClickOutside(ref, () => close())
 
     return (
-        <div ref={ref} className="absolute bottom-0 left-0 right-0 bg-white p-5 max-h-screen overflow-auto">
+        <div ref={ref} className="absolute bottom-0 left-0 right-0 bg-white p-4 max-h-full">
             {children}
         </div>
     )

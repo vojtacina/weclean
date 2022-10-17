@@ -17,7 +17,7 @@ export default function CalculatorSection() {
     }
 
     return (
-        <div className="mt-2 py-8 md:py-16">
+        <div className="mt-2 py-8 md:py-16 border-t">
             <div className="w-full hidden md:flex justify-center">
                 <h2 className="text-2xl md:text-4xl text-blue-dark">Kalkulace předběžné ceny</h2>
             </div>
@@ -79,7 +79,7 @@ export function CarpetsCalculator() {
         <div className="">
             <div className="">
                 <div className="flex justify-between">
-                    <div className="font-semibold">Plocha koberců</div>
+                    <div className="">Plocha koberců</div>
                     <div className="text-xl text-blue-dark font-semibold">{forms.carpets.area} m²</div>
                 </div>
                 <div className="mt-4">
@@ -88,7 +88,7 @@ export function CarpetsCalculator() {
             </div>
             <div className="mt-8">
                 <div className="flex justify-between">
-                    <div className="font-semibold">Počet místností</div>
+                    <div className="">Počet místností</div>
                     <div className="">
                         <NumberInput value={forms.carpets.rooms} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, rooms: to } })} />
                     </div>
@@ -106,7 +106,7 @@ export function CarpetsCalculator() {
                 </div>
             </div>
             <div className="mt-8">
-                <div className="w-full bg-gray-100 rounded-sm p-4">
+                <div className="w-full bg-gray-100 rounded-md p-4">
                     Po odeslání poptávky vám zavoláme a domluvíme se na termínu a možnostech dokončení zakázky.
                 </div>
             </div>

@@ -28,13 +28,13 @@ const Home: NextPage = () => {
         <CalculatorSection />
         <CarpetsBanner />
       </main>
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden">
+      <div className="fixed bottom-2 left-0 right-0 flex justify-center z-40 md:hidden px-2">
         <Button primary onClick={() => setCalcOpened(true)}>Spočítat cenu</Button>
       </div>
       {calcOpened &&
         <div className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50">
           <Modal close={() => setCalcOpened(false)}>
-            <CalcMobileProgress />
+            <CalcMobileProgress close={() => setCalcOpened(false)} />
           </Modal>
         </div>
       }

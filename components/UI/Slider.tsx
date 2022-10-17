@@ -27,8 +27,8 @@ const StyledTrack = styled(SliderPrimitive.Track, {
     flexGrow: 1,
     borderRadius: '9999px',
 
-    '&[data-orientation="horizontal"]': { height: 3 },
-    '&[data-orientation="vertical"]': { width: 3 },
+    '&[data-orientation="horizontal"]': { height: 2 },
+    '&[data-orientation="vertical"]': { width: 2 },
 });
 
 const StyledRange = styled(SliderPrimitive.Range, {
@@ -41,13 +41,13 @@ const StyledRange = styled(SliderPrimitive.Range, {
 const StyledThumb = styled(SliderPrimitive.Thumb, {
     all: 'unset',
     display: 'block',
-    width: 24,
-    height: 24,
-    backgroundColor: colors.blue.primary,
+    width: 16,
+    height: 16,
+    backgroundColor: colors.blue.dark,
     boxShadow: `0 2px 10px #E8E8E8`,
     borderRadius: 16,
     '&:hover': { backgroundColor: colors.blue.primary },
-    '&:focus': { boxShadow: `0 0 0 5px ${colors.blue.dark}20` },
+    '&:focus': { boxShadow: `0 0 0 5px ${colors.blue.primary}20` },
 });
 
 interface SliderType {
