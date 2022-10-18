@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+body {
+  position: relative;
+}
 
 @font-face {
   font-family: "Ubuntu";
@@ -28,3 +30,4 @@
   src: url("../assets/Ubuntu/Ubuntu-Bold.ttf");
   font-weight: 900;
 }
+

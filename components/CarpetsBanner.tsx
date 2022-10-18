@@ -6,7 +6,7 @@ export default function CarpetsBanner() {
 
     return (
         <div className=" w-full shadow-lg relative flex items-center justify-start rounded-md overflow-hidden">
-            <Image src="/images/bannerbg.jpg" blurDataURL="/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+            <Image src="/images/bannerbg.jpg" blurDataURL="/images/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className=" py-8 md:py-24  text-white w-full z-10">
                 <MaxWidthWrapper>
                     <div className="md:w-1/3">

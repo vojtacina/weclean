@@ -4,16 +4,21 @@ import { CalcFormContext } from "./contexts/CalcFormContext";
 import Button from "./UI/Button";
 import RadioGroup from "./UI/RadioGroup";
 import { Cross1Icon } from '@radix-ui/react-icons'
+import useCalculatedPrices from "./hooks/useCalculatedPrices";
+import TextField from "./UI/TextField";
+import {PhoneIncoming} from "phosphor-react"
+import { price } from "./helpers/price";
 
-export default function CalcMobileProgress({close}:{close: () => void}) {
+export default function CalcMobileProgress({ close }: { close: () => void }) {
 
-    const { preferences, setPreferences } = useContext(CalcFormContext)
+    const { preferences, setPreferences, forms } = useContext(CalcFormContext)
+    const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
         setPreferences({ ...preferences, type: data.selected })
     }
 
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
 
     return (
         <div className="">
@@ -39,7 +44,7 @@ export default function CalcMobileProgress({close}:{close: () => void}) {
             }
             {(step == 2) &&
                 (preferences.type == "carpets") ?
-                <div className="flex flex-col" style={{ height: "80vh" }}>
+                <div className="flex flex-col" style={{ height: window.innerHeight - 100 }}>
                     <div className="text-lg flex-grow-0 flex-shrink-0 font-semibold flex justify-between items-center">
                         <div className="">
                             Čištění koberců
@@ -56,13 +61,40 @@ export default function CalcMobileProgress({close}:{close: () => void}) {
 
                     <div className="pt-4 border-t  flex-grow-0 flex-shrink-0 flex justify-between">
                         <div className="pr-2">
-                            <div className="text-xl"><span className="text-blue-dark font-bold">od 2000 Kč</span></div>
-                            <div className="text-gray-500 text-xs font-normal">(maximálně 4500 Kč)</div>
+                            <div className="text-xl"><span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
+                            <div className="text-gray-500 text-xs font-normal">(maximálně {price(priceTo)})</div>
                         </div>
-                        <Button primary>Další krok</Button>
+                        <Button primary onClick={() => setStep(3)}>Další krok</Button>
                     </div>
                 </div>
                 : <></>
+            }
+            {(step == 3) &&
+                <>
+                    {/* <div className="text-lg font-semibold">
+                        Kontaktní údaje
+                    </div> */}
+                    <div className="block md:hidden mt-0 text-sm text-gray-700">
+                        Ozveme se Vám do 24 hodin a domluvíme se s Vámi na termínu a dalších podrobnostech
+                    </div>
+                    <div className="mt-4 md:mt-0">
+                        {/* <TextField value={preferences.email} label="E-mail" setValue={(to) => setPreferences({ ...preferences, email: to })} />
+                        <div className="mt-2"></div> */}
+                        <TextField type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
+
+                    </div>
+                    <div className="mt-2">
+                        <Button primary onClick={() => close()}>
+                            <div className="flex items-center gap-x-1">
+                            <PhoneIncoming size={32} />
+                            <div className="">Potvrdit</div>
+                            </div>
+                        </Button>
+                    </div>
+                    <div className="md:block hidden mt-3 text-sm text-gray-600 max-w-xs">
+                        Ozveme se Vám do 24 hodin a domluvíme se s Vámi na termínu a dalších podrobnostech
+                    </div>
+                </>
             }
         </div>
     )

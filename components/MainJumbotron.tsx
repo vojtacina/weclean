@@ -1,13 +1,17 @@
 import Image from "next/image"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import Button from "./UI/Button"
+import { Link } from "react-scroll"
+import { useContext } from "react"
+import { CalcFormContext } from "./contexts/CalcFormContext"
 
 export default function MainJumbotron() {
 
+    const { preferences, setPreferences } = useContext(CalcFormContext)
 
     return (
-        <div className=" w-full shadow-lg relative flex items-center justify-start rounded-md overflow-hidden">
-            <Image src="/images/bg.jpg" blurDataURL="/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+        <div className=" w-full shadow-lg relative flex items-center justify-start rounded-md overflow-hidden bg-gray-700">
+            <Image src="/images/bg.jpg" blurDataURL="/images/bg.jpg" layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className="absolute left-3 top-3">
                 <Image src="/images/weclean.png" width={162} height={37} alt="WeClean logo společnosti" />
             </div>
@@ -22,10 +26,12 @@ export default function MainJumbotron() {
                         </div>
                         <div className="mt-8 md:flex grid items-center gap-4">
                             <div className="hidden md:block">
-                                <Button>Spočítat cenu</Button>
+                                <Link to="kalkulacka" spy={true} smooth={true} duration={500} offset={24}>
+                                    <Button>Spočítat cenu</Button>
+                                </Link>
                             </div>
                             <div className="hidden md:block">
-                                <Button primary>Přejít k objednávce</Button>
+                                <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Přejít k objednávce</Button>
                             </div>
                         </div>
                     </div>

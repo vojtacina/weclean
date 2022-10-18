@@ -7,17 +7,20 @@ import Slider from "./UI/Slider";
 import NumberInput from "./UI/NumberInput";
 import Checkbox from "./UI/Checkbox";
 import Button from "./UI/Button";
+import useCalculatedPrices from "./hooks/useCalculatedPrices";
+import { price } from "./helpers/price";
 
 export default function CalculatorSection() {
 
-    const { preferences, setPreferences } = useContext(CalcFormContext)
+    const { preferences, setPreferences, forms } = useContext(CalcFormContext)
+    const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
         setPreferences({ ...preferences, type: data.selected })
     }
 
     return (
-        <div className="mt-2 py-8 md:py-16 border-t">
+        <div id="kalkulacka" className="mt-2 py-8 md:py-16 border-t">
             <div className="w-full hidden md:flex justify-center">
                 <h2 className="text-2xl md:text-4xl text-blue-dark">Kalkulace předběžné ceny</h2>
             </div>
@@ -36,15 +39,17 @@ export default function CalculatorSection() {
             <MaxWidthWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-4 md:pt-12 gap-x-12">
                     <div className="hidden md:block col-span-3">
-                        <CarpetsCalculator />
+                        {preferences.type == "carpets" &&
+                            <CarpetsCalculator />
+                        }
                         <div className="mt-8">
                             <div className="flex justify-between">
                                 <div className="">
-                                    <div className="text-2xl">Celková cena <span className="text-blue-dark font-bold">od 2000 Kč</span></div>
-                                    <div className="text-gray-500">(maximálně však 4500 Kč)</div>
+                                    <div className="text-2xl">Celková cena <span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
+                                    <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
                                 </div>
                                 <div className="">
-                                    <Button primary>Objednat</Button>
+                                    <Button primary onClick={() => setPreferences({...preferences, modalOpened: true})}>Objednat</Button>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +81,7 @@ export function CarpetsCalculator() {
 
 
     return (
-        <div className="">
+        <div className="text-sm md:text-base">
             <div className="">
                 <div className="flex justify-between">
                     <div className="">Plocha koberců</div>

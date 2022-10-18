@@ -22,18 +22,18 @@ const StyledSlider = styled(SliderPrimitive.Root, {
 });
 
 const StyledTrack = styled(SliderPrimitive.Track, {
-    backgroundColor: "#E8E8E8",
+    backgroundColor: "rgb(209 213 219)",
     position: 'relative',
     flexGrow: 1,
     borderRadius: '9999px',
 
-    '&[data-orientation="horizontal"]': { height: 2 },
-    '&[data-orientation="vertical"]': { width: 2 },
+    '&[data-orientation="horizontal"]': { height: 1 },
+    '&[data-orientation="vertical"]': { width: 1 },
 });
 
 const StyledRange = styled(SliderPrimitive.Range, {
     position: 'absolute',
-    backgroundColor: '#E8E8E8',
+    backgroundColor: 'rgb(209 213 219)',
     borderRadius: '9999px',
     height: '100%',
 });
@@ -43,8 +43,8 @@ const StyledThumb = styled(SliderPrimitive.Thumb, {
     display: 'block',
     width: 16,
     height: 16,
-    backgroundColor: colors.blue.dark,
-    boxShadow: `0 2px 10px #E8E8E8`,
+    backgroundColor: colors.blue.primary,
+    boxShadow: `0 2px 10px rgb(209 213 219)`,
     borderRadius: 16,
     '&:hover': { backgroundColor: colors.blue.primary },
     '&:focus': { boxShadow: `0 0 0 5px ${colors.blue.primary}20` },

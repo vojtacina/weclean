@@ -1,19 +1,22 @@
 import { useState, createContext, useEffect, ReactElement } from "react";
+import { FormsType } from "../types/FormsType";
 
 const preferencesDefault = {
     type: "carpets",
     phone: "",
-    email: ""
+    email: "",
+    modalOpened: false
 } as {
     type: "carpets" | "cleaning",
     phone: string,
-    email: string
+    email: string,
+    modalOpened: boolean
 }
 
 const formsDefault = {
     carpets: {
-        area: 100,
-        rooms: 5,
+        area: 0,
+        rooms: 0,
         isDirty: false,
         isSmall: false
     },
@@ -21,18 +24,7 @@ const formsDefault = {
         area: 0,
         rooms: 0
     }
-} as {
-    carpets: {
-        area: number,
-        rooms: number,
-        isDirty: boolean,
-        isSmall: boolean
-    },
-    cleaning: {
-        area: number,
-        rooms: number
-    }
-}
+} as FormsType
 
 
 
