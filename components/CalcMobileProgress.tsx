@@ -6,7 +6,7 @@ import RadioGroup from "./UI/RadioGroup";
 import { Cross1Icon } from '@radix-ui/react-icons'
 import useCalculatedPrices from "./hooks/useCalculatedPrices";
 import TextField from "./UI/TextField";
-import {PhoneIncoming} from "phosphor-react"
+import { PhoneIncoming } from "phosphor-react"
 import { price } from "./helpers/price";
 
 export default function CalcMobileProgress({ close }: { close: () => void }) {
@@ -71,23 +71,23 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
             }
             {(step == 3) &&
                 <>
-                    {/* <div className="text-lg font-semibold">
-                        Kontaktní údaje
-                    </div> */}
+                    <div className="text-lg font-semibold">
+                        Ještě poslední krok...
+                    </div>
                     <div className="block md:hidden mt-0 text-sm text-gray-700">
                         Ozveme se Vám do 24 hodin a domluvíme se s Vámi na termínu a dalších podrobnostech
                     </div>
-                    <div className="mt-4 md:mt-0">
-                        {/* <TextField value={preferences.email} label="E-mail" setValue={(to) => setPreferences({ ...preferences, email: to })} />
-                        <div className="mt-2"></div> */}
-                        <TextField type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
+                    <div className="mt-4">
+                        <TextField value={preferences.email} label="Váš e-mail" setValue={(to) => setPreferences({ ...preferences, email: to })} />
+                        <div className="mt-2"></div>
+                        <TextField type="tel" value={preferences.phone} label="Vaše telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
 
                     </div>
                     <div className="mt-2">
                         <Button primary onClick={() => close()}>
                             <div className="flex items-center gap-x-1">
-                            <PhoneIncoming size={32} />
-                            <div className="">Potvrdit</div>
+                                <PhoneIncoming size={32} />
+                                <div className="">Potvrdit</div>
                             </div>
                         </Button>
                     </div>
