@@ -88,7 +88,7 @@ export function CarpetsCalculator() {
                     <div className="text-xl text-blue-dark font-semibold">{forms.carpets.area} m²</div>
                 </div>
                 <div className="mt-4">
-                    <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={1000} />
+                    <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={500} />
                 </div>
             </div>
             <div className="mt-8">
