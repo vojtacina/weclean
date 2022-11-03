@@ -11,6 +11,7 @@ import ServicesSection from '../components/ServicesSection'
 import Button from '../components/UI/Button'
 import Modal from '../components/UI/Modal'
 import { AnimatePresence, motion } from 'framer-motion'
+import ContactBlock from '../components/ContactBlock'
 
 const Home: NextPage = () => {
 
@@ -18,18 +19,20 @@ const Home: NextPage = () => {
   const { preferences, setPreferences } = useContext(CalcFormContext)
 
   return (
-    <div className={"font-ubuntu"}>
+    <div className={"font-ubuntu bg-gray-100"}>
       <Head>
-        <title>WeClean - Profesionální úklid a čištění koberců Šumperk</title>
-        <meta name="description" content="Čištění koberců, úklid kanceláří a ..." />
+        <title>Profesionální úklid a čištění koberců Šumperk a okolí — WeClean</title>
+        <meta name="description" content="Nabízíme úklidové služby a čištění koberců pro firmy, průmysl a domácnosti. On-line kalkulace ceny zdarma a hned. Garantujeme 100% spokojenost." />
+        <meta name="theme-color" content="rgb(243 244 246)" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={"bg-white p-2"}>
+      <main className={"bg-white p-1.5 md:p-3 rounded-xl"}>
         <MainJumbotron />
         <ServicesSection />
         <CalculatorSection />
         <CarpetsBanner />
+        <ContactBlock />
       </main>
       <div className="fixed bottom-2 left-0 right-0 flex justify-center z-40 md:hidden px-2">
         <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
@@ -41,7 +44,8 @@ const Home: NextPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-black backdrop-blur-sm bg-opacity-25">
+              transition={{duration: 0.5}}
+              className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-black backdrop-blur-md bg-opacity-50">
             </motion.div>
             <Modal close={() => setPreferences({ ...preferences, modalOpened: false })}>
               <CalcMobileProgress close={() => setPreferences({ ...preferences, modalOpened: false })} />
@@ -49,7 +53,7 @@ const Home: NextPage = () => {
           </>
         }
       </AnimatePresence>
-      <footer className={""}>
+      <footer className={"h-16 md:h-0"}>
 
       </footer>
     </div>

@@ -1,8 +1,12 @@
 import Image from "next/image"
+import { useContext } from "react"
+import { CalcFormContext } from "./contexts/CalcFormContext"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import Button from "./UI/Button"
 
 export default function CarpetsBanner() {
+
+    const { preferences, setPreferences } = useContext(CalcFormContext)
 
     return (
         <div className=" w-full shadow-lg relative flex items-center justify-start rounded-md overflow-hidden">
@@ -16,7 +20,7 @@ export default function CarpetsBanner() {
                         </div>
                         <div className="hidden mt-8 md:flex items-center gap-4">
                             <div className="hidden md:block">
-                                <Button primary>Přejít k objednávce</Button>
+                                <Button primary onClick={() => setPreferences({...preferences, modalOpened: true})}>Přejít k objednávce</Button>
                             </div>
                         </div>
                     </div>

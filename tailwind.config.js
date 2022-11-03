@@ -13,7 +13,13 @@ module.exports = {
         blue: {
           dark: "#1C5AA4",
           primary: "#1E76DC"
+        },
+        yellow: {
+          brand: "#FFCC57"
         }
+      },
+      spacing: {
+        '1.5': '6px'
       }
     },
   },

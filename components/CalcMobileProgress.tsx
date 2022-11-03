@@ -74,7 +74,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                     <div className="text-lg font-semibold">
                         Ještě poslední krok...
                     </div>
-                    <div className="block md:hidden mt-0 text-sm text-gray-700">
+                    <div className="block mt-0 text-sm text-gray-700 max-w-xs">
                         Ozveme se Vám do 24 hodin a domluvíme se s Vámi na termínu a dalších podrobnostech
                     </div>
                     <div className="mt-4">
@@ -91,9 +91,9 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </Button>
                     </div>
-                    <div className="md:block hidden mt-3 text-sm text-gray-600 max-w-xs">
+                    {/* <div className="md:block hidden mt-3 text-sm text-gray-600 max-w-xs">
                         Ozveme se Vám do 24 hodin a domluvíme se s Vámi na termínu a dalších podrobnostech
-                    </div>
+                    </div> */}
                 </>
             }
         </div>

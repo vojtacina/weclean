@@ -5,7 +5,7 @@ export default function ServicesSection() {
 
 
     return (
-        <div className="mt-2 bg-white py-8 md:py-16">
+        <div className="mt-2 py-8 md:py-16">
             <MaxWidthWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <Service title="Čištění koberců" subtitle="Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." buttonText="neco" buttonAction={() => {}} />

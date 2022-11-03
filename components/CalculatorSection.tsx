@@ -57,7 +57,7 @@ export default function CalculatorSection() {
                     <div className="font-normal text-center md:text-left text-gray-600">
 
                         <div className="w-full h-36 relative">
-                            <Image src={"/images/garance.png"} layout="fill" objectFit="contain" objectPosition={"center"} />
+                            <Image src={"/images/garance.png"} layout="fill" objectFit="contain" objectPosition={"center"} alt="Garance 100% spokojenosti" />
                         </div>
                         <div className="mt-6">
                             Pokud nebudete spokojeni a nebo se nám nepodaří vyčistit to, co jsme slíbili, účtovat nic nebudeme.
