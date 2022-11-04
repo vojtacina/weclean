@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={"bg-white p-1.5 md:p-3 rounded-xl"}>
+      <main className={"bg-white p-1.5 md:p-3 rounded-t-xl shadow-sm"}>
         <MainJumbotron />
         <ServicesSection />
         <CalculatorSection />

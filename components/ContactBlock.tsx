@@ -13,7 +13,7 @@ export default function ContactBlock() {
                 <div className="grid md:grid-cols-2 gap-x-12">
                     <div className="">
                         <div className="text-xl font-semibold">Kdo jsme</div>
-                        <div className="">
+                        <div className="text-gray-600">
                             Focuscleaning uklízí a čistí pro známé firmy napříč odvětvími
                         </div>
                         <div className="mt-10">
@@ -32,14 +32,15 @@ export default function ContactBlock() {
                         </div>
                         <div className="mt-12">
                             <div className="font-semibold">Zaměřujeme se na celý olomoucký kraj:</div>
+                            <div className="text-gray-600">Zábřeh, Šumperk, Mohelnice, Jeseník, Olomouc, Šternberk, Bruntál, Přerov</div>
                         </div>
                     </div>
                 </div>
             </MaxWidthWrapper>
             <div className="md:px-0 xl:px-24">
-                <div className="md:bg-gray-100 rounded-lg md:my-12">
+                <div className="md:bg-gray-100 rounded-lg mt-4 mb-2 md:my-12">
                     <MaxWidthWrapper>
-                        <div className="md:flex items-center w-full py-4 md:py-12 justify-between">
+                        <div className="md:flex rounded-lg bg-gray-100 md:bg-transparent p-4 md:p-0 items-center w-full py-4 md:py-12 justify-between">
                             <div className="">
                                 <div className="text-gray-600">
                                     Pro vaše dotazy a poptávky jsme k dispozici na emailové adrese
@@ -54,9 +55,9 @@ export default function ContactBlock() {
                     </MaxWidthWrapper>
                 </div>
             </div>
-            <MaxWidthWrapper>
+            {/* <MaxWidthWrapper>
                 <div className="border-t pt-4 text-gray-500">WeClean</div>
-            </MaxWidthWrapper>
+            </MaxWidthWrapper> */}
         </div>
     )
 }
@@ -65,7 +66,7 @@ function CheckLabel({ children }: { children: string }) {
 
 
     return (
-        <div className="flex items-center text-blue-dark mt-1">
+        <div className="flex text-blue-dark mt-1">
             <div className="">
                 <CheckCircle size={24} weight="fill" />
             </div>
