@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect, ReactElement } from "react";
+import { useState, createContext, useEffect, ReactElement, SetStateAction, Dispatch } from "react";
 import { FormsType } from "../types/FormsType";
 
 const preferencesDefault = {
@@ -22,7 +22,14 @@ const formsDefault = {
     },
     cleaning: {
         area: 0,
-        rooms: 0
+        rooms: 0,
+        wc: false,
+        bins: false,
+        vacuuming: false,
+        wiping: false,
+        windows: false,
+        kitchenette: false,
+        reconstruction_cleaning: false
     }
 } as FormsType
 
@@ -32,7 +39,7 @@ export const CalcFormContext = createContext({
     preferences: preferencesDefault, 
     setPreferences: {} as any,
     forms: formsDefault,
-    setForms: {} as any
+    setForms: {} as Dispatch<SetStateAction<FormsType>>
 });
 
 export function CalcFormContextProvider(props: { children: ReactElement | ReactElement[] }) {

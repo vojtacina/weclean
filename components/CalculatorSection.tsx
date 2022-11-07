@@ -42,6 +42,9 @@ export default function CalculatorSection() {
                         {preferences.type == "carpets" &&
                             <CarpetsCalculator />
                         }
+                        {preferences.type == "cleaning" &&
+                            <CleaningCalculator />
+                        }
                         <div className="mt-8">
                             <div className="flex justify-between">
                                 <div className="">
@@ -49,7 +52,7 @@ export default function CalculatorSection() {
                                     <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
                                 </div>
                                 <div className="">
-                                    <Button primary onClick={() => setPreferences({...preferences, modalOpened: true})}>Objednat</Button>
+                                    <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Objednat</Button>
                                 </div>
                             </div>
                         </div>
@@ -71,6 +74,57 @@ export default function CalculatorSection() {
                     </div>
                 </div>
             </MaxWidthWrapper>
+        </div>
+    )
+}
+
+export function CleaningCalculator() {
+
+    const { forms, setForms } = useContext(CalcFormContext)
+
+
+    return (
+        <div className="text-sm md:text-base">
+            <div className="mt-0">
+                <div className="flex justify-between">
+                    <div className="">Počet místností, ve kterých se bude uklízet</div>
+                    <div className="">
+                        <NumberInput value={forms.cleaning.rooms} setValue={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, rooms: to } })} />
+                    </div>
+                </div>
+                <div className="mt-4">
+                    <Slider value={forms.cleaning.rooms} setValue={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, rooms: to } })} max={30} />
+                </div>
+            </div>
+            <div className="mt-8">
+                <div className="">
+                    <Checkbox label="Vynesení košů" checked={forms.cleaning.bins} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, bins: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Úklid kuchyně nebo kuchyňky" checked={forms.cleaning.kitchenette} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, kitchenette: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Vysávání koberců" checked={forms.cleaning.vacuuming} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, vacuuming: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Úklid a umývání sociálních zařízení a koupelen" checked={forms.cleaning.wc} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, wc: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Umývání oken" checked={forms.cleaning.windows} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, windows: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Vytírání" checked={forms.cleaning.wiping} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, wiping: to } })} />
+                </div>
+                <div className="mt-2">
+                    <Checkbox label="Jde o úklid po rekonstrukci, malování nebo je prostor silně znečištěný" checked={forms.cleaning.reconstruction_cleaning} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, reconstruction_cleaning: to } })} />
+                </div>
+            </div>
+            <div className="mt-8">
+                <div className="w-full bg-gray-100 rounded-md p-4">
+                    Mějte na paměti, že výpočet ceny úklidových služeb je velmi přibližný a proto je rozmezí cen tak velké. Přesnější cenu vám rádi sdělíme po odeslání poptávky.
+                </div>
+            </div>
+
         </div>
     )
 }

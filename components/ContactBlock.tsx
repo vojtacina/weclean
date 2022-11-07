@@ -1,11 +1,21 @@
-import { CheckCircle } from "phosphor-react";
+import { Check, CheckCircle } from "phosphor-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Button from "./UI/Button";
 import Image from "next/image"
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useEffect, useState } from "react";
 
 export default function ContactBlock() {
 
+    const [copied, setCopied] = useState(false)
 
+    useEffect(() => {
+        if (copied) {
+            setTimeout(() => {
+                setCopied(false)
+            }, 5000)
+        }
+    }, [copied]);
 
     return (
         <div id="kontakt" className="mt-2 pt-8 pb-3 md:pt-16">
@@ -48,7 +58,18 @@ export default function ContactBlock() {
                                 <div className="text-blue-dark text-3xl md:text-4xl">info@we-clean.cz</div>
                             </div>
                             <div className="mt-2 md:mt-0 hidden md:block">
-                                <Button primary>Zkopírovat e-mail</Button>
+                                <CopyToClipboard
+                                    text={"info@we-clean.cz"}
+                                    onCopy={() => setCopied(true)}
+                                >
+                                    {copied ?
+                                        <div className="flex items-center gap-x-2 text-green-800 text-lg px-8">
+                                            <Check size={24} />
+                                            <div className="">Zkopírováno</div>
+                                        </div> :
+                                        <Button primary>Zkopírovat e-mail</Button>
+                                    }
+                                </CopyToClipboard>
                             </div>
 
                         </div>
@@ -86,8 +107,8 @@ function Person({ name, subtitle, image }: {
             <div className="w-32 h-32 rounded-full overflow-hidden bg-gray-100 relative">
                 <Image src={image} layout="fill" objectFit="cover" alt={name + " - " + subtitle} />
             </div>
-            <div className="text-center mt-6 font-semibold text-lg">{name}</div>
-            <div className="text-center mt-1 text-gray-600">{subtitle}</div>
+            <div className="text-center mt-6 font-semibold md:text-lg  text-base">{name}</div>
+            <div className="text-center mt-1 text-gray-600 text-sm md:text-base">{subtitle}</div>
         </div>
     )
 }
