@@ -11,8 +11,9 @@ module.exports = {
     extend: {
       colors: {
         blue: {
-          dark: "#1C5AA4",
-          primary: "#1E76DC"
+          dark: "#1E76DC",
+          primary: "#158FFF",
+          bright: "#349EFF"
         },
         yellow: {
           brand: "#FFCC57"
@@ -20,6 +21,9 @@ module.exports = {
       },
       spacing: {
         '1.5': '6px'
+      },
+      ringWidth: {
+        '3': '3px'
       }
     },
   },

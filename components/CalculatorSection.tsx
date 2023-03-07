@@ -22,7 +22,7 @@ export default function CalculatorSection() {
     return (
         <div id="kalkulacka" className="mt-2 py-8 md:py-16 border-t">
             <div className="w-full hidden md:flex justify-center">
-                <h2 className="text-2xl md:text-4xl text-blue-dark">Kalkulace předběžné ceny</h2>
+                <h2 className="text-2xl md:text-4xl">Kalkulace předběžné ceny</h2>
             </div>
             <div className="w-full hidden md:flex justify-center mt-6">
                 <div className="w-full md:w-auto md:inline-flex">
@@ -135,11 +135,11 @@ export function CarpetsCalculator() {
 
 
     return (
-        <div className="text-sm md:text-base">
+        <div className="">
             <div className="">
                 <div className="flex justify-between">
                     <div className="">Plocha koberců</div>
-                    <div className="text-xl text-blue-dark font-semibold">{forms.carpets.area} m²</div>
+                    <div className="text-xl font-semibold">{forms.carpets.area} m²</div>
                 </div>
                 <div className="mt-4">
                     <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={500} />

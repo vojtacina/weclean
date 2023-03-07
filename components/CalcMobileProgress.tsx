@@ -62,7 +62,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                     <div className="pt-4 border-t  flex-grow-0 flex-shrink-0 flex justify-between">
                         <div className="pr-2">
                             <div className="text-xl"><span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
-                            <div className="text-gray-500 text-xs font-normal">(maximálně {price(priceTo)})</div>
+                            <div className="text-gray-500 font-xs">(max. {price(priceTo)})</div>
                         </div>
                         <Button primary onClick={() => setStep(3)}>Další krok</Button>
                     </div>
@@ -110,8 +110,8 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                     <div className="mt-2">
                         <Button primary onClick={() => close()}>
                             <div className="flex items-center gap-x-1">
-                                <PhoneIncoming size={32} />
-                                <div className="">Potvrdit</div>
+                                <PhoneIncoming size={24} />
+                                <div className="text-lg">Potvrdit</div>
                             </div>
                         </Button>
                     </div>

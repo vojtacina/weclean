@@ -30,7 +30,7 @@ function Service({title, subtitle, buttonText, buttonAction}:ServiceType) {
 
     return (
         <div className="text-black ">
-            <h2 className="text-xl text-blue-dark">{title}</h2>
+            <h2 className="text-2xl mb-4">{title}</h2>
             <p className="opacity-75">{subtitle}</p>
         </div>
     )

@@ -43,11 +43,11 @@ const StyledThumb = styled(SliderPrimitive.Thumb, {
     display: 'block',
     width: 16,
     height: 16,
-    backgroundColor: colors.blue.primary,
+    backgroundColor: "#424242",
     boxShadow: `0 2px 10px rgb(209 213 219)`,
     borderRadius: 16,
-    '&:hover': { backgroundColor: colors.blue.primary },
-    '&:focus': { boxShadow: `0 0 0 5px ${colors.blue.primary}20` },
+    '&:hover': { backgroundColor: "#424242" },
+    '&:focus': { boxShadow: `0 0 0 5px #00000020` },
 });
 
 interface SliderType {
