@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 
-export default function MaxWidthWrapper({children}:{children: ReactElement}) {
+export default function MaxWidthWrapper({children}:{children: ReactNode}) {
 
 
     return (

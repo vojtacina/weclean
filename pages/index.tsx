@@ -1,17 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useContext, useState } from 'react'
-import CalcMobileProgress from '../components/CalcMobileProgress'
-import CalculatorSection from '../components/CalculatorSection'
-import CarpetsBanner from '../components/CarpetsBanner'
+import CalculatorSection from '../components/sections/CalculatorSection'
+import CarpetsBanner from '../components/sections/CarpetsBanner'
 import { CalcFormContext } from '../components/contexts/CalcFormContext'
-import MainJumbotron from '../components/MainJumbotron'
-import ServicesSection from '../components/ServicesSection'
+import MainJumbotron from '../components/sections/MainJumbotron'
+import ServicesSection from '../components/sections/ServicesSection'
 import Button from '../components/UI/Button'
-import Modal from '../components/UI/Modal'
-import { AnimatePresence, motion } from 'framer-motion'
-import ContactBlock from '../components/ContactBlock'
+import ContactBlock from '../components/sections/ContactBlock'
+import WhyChooseUs from '../components/sections/WhyChooseUs'
 
 const Home: NextPage = () => {
 
@@ -26,31 +23,25 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={"bg-white "}>
-        <MainJumbotron />
-        <ServicesSection />
-        <CalculatorSection />
-        <CarpetsBanner />
+        <MainJumbotron data={{
+          image: "carpets-bg.jpg", title: "Profesionální úklid a čištění koberců Brno", subtitle: "Zkušenosti od roku 1996", buttons: [
+            ["Spočítat cenu", "#kalkulacka"],
+            ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]
+          ]
+        }} />
+        <ServicesSection data={[
+          { title: "Čištění koberců", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] },
+          { title: "Úklid kanceláří", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] },
+          { title: "Broušení povrchů", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] }
+        ]} />
+        <WhyChooseUs />
+        <CalculatorSection select="carpets" />
+        <CarpetsBanner data={{ title: "Vaše koberce budou zářit čistotou", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })] }} />
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-2">
         <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
       </div>
-      <AnimatePresence>
-        {preferences?.modalOpened &&
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{duration: 0.5}}
-              className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-black backdrop-blur-sm bg-opacity-50">
-            </motion.div>
-            <Modal close={() => setPreferences({ ...preferences, modalOpened: false })}>
-              <CalcMobileProgress close={() => setPreferences({ ...preferences, modalOpened: false })} />
-            </Modal>
-          </>
-        }
-      </AnimatePresence>
       <footer className={"h-16 md:h-0"}>
 
       </footer>

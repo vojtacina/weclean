@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CarpetsCalculator, CleaningCalculator } from "./CalculatorSection";
+import { CarpetsCalculator, CleaningCalculator } from "./sections/CalculatorSection";
 import { CalcFormContext } from "./contexts/CalcFormContext";
 import Button from "./UI/Button";
 import RadioGroup from "./UI/RadioGroup";

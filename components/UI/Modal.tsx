@@ -11,9 +11,9 @@ export default function Modal({ children, close }: ModalProps) {
 
     const ref = useRef<HTMLDivElement | null>(null)
 
-    useOnClickOutside(ref, () => close())
-
     const isMobile = window.innerWidth > 768 ? false : true
+
+    useOnClickOutside(ref, isMobile ? () => {} :() => close())
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';

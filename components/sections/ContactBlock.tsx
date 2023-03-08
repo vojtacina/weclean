@@ -1,9 +1,9 @@
 import { Check, CheckCircle } from "phosphor-react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Button from "./UI/Button";
 import Image from "next/image"
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useEffect, useState } from "react";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import Button from "../UI/Button";
 
 export default function ContactBlock() {
 

@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
-import { CalcFormContext } from "./contexts/CalcFormContext";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Switch from "./UI/Switch";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image"
-import Slider from "./UI/Slider";
-import NumberInput from "./UI/NumberInput";
-import Checkbox from "./UI/Checkbox";
-import Button from "./UI/Button";
-import useCalculatedPrices from "./hooks/useCalculatedPrices";
-import { price } from "./helpers/price";
+import useCalculatedPrices from "../hooks/useCalculatedPrices";
+import { CalcFormContext } from "../contexts/CalcFormContext";
+import Switch from "../UI/Switch";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import Button from "../UI/Button";
+import { price } from "../helpers/price";
+import Slider from "../UI/Slider";
+import NumberInput from "../UI/NumberInput";
+import Checkbox from "../UI/Checkbox";
 
-export default function CalculatorSection() {
+
+export default function CalculatorSection({ select }: { select?: "carpets" | "cleaning" | "floors" }) {
 
     const { preferences, setPreferences, forms } = useContext(CalcFormContext)
     const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
@@ -18,6 +19,12 @@ export default function CalculatorSection() {
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
         setPreferences({ ...preferences, type: data.selected })
     }
+
+    useEffect(() => {
+        if (preferences && setPreferences) {
+            setPreferences({ ...preferences, type: select })
+        }
+    }, [select, preferences, setPreferences]);
 
     return (
         <div id="kalkulacka" className="mt-2 py-8 md:py-16 border-t">
