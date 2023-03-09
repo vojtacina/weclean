@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         <CarpetsBanner data={{ image: "clean-hands.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-2">
+      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">
         <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
       </div>
       <footer className={""}>

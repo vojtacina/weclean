@@ -22,7 +22,7 @@ export default function MainJumbotron({ data }: {
     return (
         <div className=" w-full relative flex items-center justify-start bg-gray-700">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-opacity-30 bg-black z-10"></div>
-            <Image src={`/images/${data.image}`} blurDataURL={`/images/${data.image}`} layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+            <Image src={`/images/${data.image}`} blurDataURL={`/images/${data.image}`} fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className=" pt-32 pb-16 lg:py-48  text-white w-full z-10">
                 <MaxWidthWrapper>
                     <div className="">
