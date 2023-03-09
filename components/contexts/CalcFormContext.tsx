@@ -7,7 +7,7 @@ const preferencesDefault = {
     email: "",
     modalOpened: false
 } as {
-    type: "carpets" | "cleaning",
+    type: "carpets" | "cleaning" | "floors",
     phone: string,
     email: string,
     modalOpened: boolean

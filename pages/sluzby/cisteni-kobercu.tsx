@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           { title: "Broušení povrchů", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] }
         ]} />
         <CalculatorSection />
-        <CarpetsBanner data={{title: "Vaše koberce budou zářit čistotou", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]}} />
+        <CarpetsBanner data={{image: "bg.jpg" , title: "Vaše koberce budou zářit čistotou", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]}} />
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-2">

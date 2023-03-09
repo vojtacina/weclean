@@ -9,6 +9,11 @@ import { price } from "../helpers/price";
 import Slider from "../UI/Slider";
 import NumberInput from "../UI/NumberInput";
 import Checkbox from "../UI/Checkbox";
+import { H2 } from "../typography/H2";
+import { Paragraph } from "../typography/Paragraph";
+import VisitCard from "../fragments/VisitCard";
+import { ShieldCheck } from "phosphor-react";
+import Link from "next/link";
 
 
 export default function CalculatorSection({ select }: { select?: "carpets" | "cleaning" | "floors" }) {
@@ -21,13 +26,13 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
     }
 
     useEffect(() => {
-        if (preferences && setPreferences) {
+        if (preferences && setPreferences && select) {
             setPreferences({ ...preferences, type: select })
         }
-    }, [select, preferences, setPreferences]);
+    }, []);
 
     return (
-        <div id="kalkulacka" className="mt-2 py-8 md:py-16 border-t">
+        <div id="kalkulacka" className="mt-2 py-8 md:py-16">
             <div className="w-full hidden md:flex justify-center">
                 <h2 className="text-2xl md:text-4xl">Kalkulace předběžné ceny</h2>
             </div>
@@ -38,49 +43,86 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                         options:
                             [
                                 { label: "Čištění koberců", value: "carpets" },
-                                { label: "Úklidové služby", value: "cleaning" }
+                                { label: "Úklidové služby", value: "cleaning" },
+                                { label: "Žulové podlahy/schody", value: "floors" }
                             ]
                     }} setData={setSwitchData} />
                 </div>
             </div>
             <MaxWidthWrapper>
-                <div className="grid grid-cols-1 md:grid-cols-4 md:pt-12 gap-x-12">
-                    <div className="hidden md:block col-span-3">
+                <div className="grid grid-cols-1 md:grid-cols-9 md:pt-12 gap-x-12">
+                    <div className="hidden md:block col-span-6">
                         {preferences.type == "carpets" &&
-                            <CarpetsCalculator />
-                        }
-                        {preferences.type == "cleaning" &&
-                            <CleaningCalculator />
-                        }
-                        <div className="mt-8">
-                            <div className="flex justify-between">
-                                <div className="">
-                                    <div className="text-2xl">Celková cena <span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
-                                    <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
-                                </div>
-                                <div className="">
-                                    <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Objednat</Button>
+                            <div className="flex flex-col justify-center h-full">
+                                <CarpetsCalculator />
+                                <div className="mt-8">
+                                    <div className="flex justify-between">
+                                        <div className="">
+                                            <div className="text-2xl">Celková cena <span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
+                                            <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
+                                        </div>
+                                        <div className="">
+                                            <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Objednat</Button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
+                        {preferences.type != "carpets" &&
+                            <NoFormMessage subtitle="Určit cenu za úklid kanceláří je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce." />
+                        }
                     </div>
-                    <div className="font-normal text-center md:text-left text-gray-600">
+                    <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded-md">
 
-                        <div className="w-full h-36 relative">
-                            <Image src={"/images/garance.png"} layout="fill" objectFit="contain" objectPosition={"center"} alt="Garance 100% spokojenosti" />
+                        <div className="w-full flex justify-center text-blue-primary">
+                            <ShieldCheck size={100} weight="fill" />
                         </div>
                         <div className="mt-6">
                             Pokud nebudete spokojeni a nebo se nám nepodaří vyčistit to, co jsme slíbili, účtovat nic nebudeme.
                         </div>
-                        <div className=" my-4 text-blue-dark text-lg font-semibold">
+                        <div className=" my-4 text-lg font-medium text-black">
                             Nic tedy neriskujete!
                         </div>
                         <div>
-                            Máme bohaté zkušenosti s čištěním koberců pro známé firmy, které byly s čištěním spokojené.
+                            Spokojenost potvrzují i známé firmy, které s námi spolupracují.
                         </div>
+                        <div className="w-full h-12 relative my-4">
+                            <Image src="/images/references.png" alt="Loga firem našich klientů" className=" md:object-left" layout="fill" objectFit="contain" />
+                            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-r from-transparent to-blue-bg"></div>
+                        </div>
+                        <Link href={"/o-nas"}>
+                        <Button>Zobrazit další reference</Button>
+                        </Link>
+
                     </div>
                 </div>
             </MaxWidthWrapper>
+        </div>
+    )
+}
+
+export function NoFormMessage({ subtitle }: { subtitle: string }) {
+
+    const { preferences, setPreferences } = useContext(CalcFormContext)
+
+    return (
+        <div className="w-full h-full bg-gray-100 rounded-md flex items-center py-8 px-16">
+            <div className="flex-col justify-center items-center text-center">
+                <H2 className="mb-4">Pro cenový odhad nás prosím kontaktujte</H2>
+                <Paragraph className="mb-4">{subtitle}</Paragraph>
+                <Paragraph className="mb-6">Sami vám zavoláme, když nám necháte číslo nebo nám můžete zavolat rovnou.</Paragraph>
+                <div className="inline-flex mb-6">
+                    <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Nechte nám svůj telefon</Button>
+                </div>
+                <Paragraph>nebo nám můžete</Paragraph>
+                <div className="flex justify-center items-baseline gap-2">
+                    <Paragraph>zavolat na:</Paragraph>
+                    <a href="tel:777772054" className="font-medium text-2xl">77777 20 54</a>
+                </div>
+                <div className="mt-4">
+                    <VisitCard />
+                </div>
+            </div>
         </div>
     )
 }
@@ -146,21 +188,13 @@ export function CarpetsCalculator() {
             <div className="">
                 <div className="flex justify-between">
                     <div className="">Plocha koberců</div>
-                    <div className="text-xl font-semibold">{forms.carpets.area} m²</div>
-                </div>
-                <div className="mt-4">
-                    <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={500} />
-                </div>
-            </div>
-            <div className="mt-8">
-                <div className="flex justify-between">
-                    <div className="">Počet místností</div>
-                    <div className="">
-                        <NumberInput value={forms.carpets.rooms} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, rooms: to } })} />
+                    <div className="flex gap-2">
+                        <NumberInput min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
+                        <div className="text-xl font-medium">m²</div>
                     </div>
                 </div>
                 <div className="mt-4">
-                    <Slider value={forms.carpets.rooms} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, rooms: to } })} max={30} />
+                    <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={999} />
                 </div>
             </div>
             <div className="mt-8">

@@ -16,11 +16,11 @@
     "@stitches/react": "^1.2.8",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "framer-motion": "^7.6.1",
-    "next": "12.3.1",
+    "next": "^13.2.3",
     "phosphor-react": "^1.4.1",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-scroll": "^1.8.7"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@types/react-scroll": "^1.8.4",
     "autoprefixer": "^10.4.12",
     "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
+    "eslint-config-next": "^13.2.3",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.1.8",
     "typescript": "4.8.4"

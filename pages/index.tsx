@@ -9,6 +9,9 @@ import ServicesSection from '../components/sections/ServicesSection'
 import Button from '../components/UI/Button'
 import ContactBlock from '../components/sections/ContactBlock'
 import WhyChooseUs from '../components/sections/WhyChooseUs'
+import FeaturedPngSection from '../components/sections/FeaturedPngSection'
+import Footer from '../components/sections/Footer'
+import Header from '../components/sections/Header'
 
 const Home: NextPage = () => {
 
@@ -21,7 +24,9 @@ const Home: NextPage = () => {
         <title>Profesionální úklid a čištění koberců Brno a okolí — FocusCleaning</title>
         <meta name="description" content="Nabízíme úklidové služby a čištění koberců pro firmy a průmysl. On-line kalkulace ceny zdarma a hned. Garantujeme 100% spokojenost." />
       </Head>
-
+      <nav>
+        <Header />
+      </nav>
       <main className={"bg-white "}>
         <MainJumbotron data={{
           image: "carpets-bg.jpg", title: "Profesionální úklid a čištění koberců Brno", subtitle: "Zkušenosti od roku 1996", buttons: [
@@ -35,15 +40,22 @@ const Home: NextPage = () => {
           { title: "Broušení povrchů", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] }
         ]} />
         <WhyChooseUs />
+        <FeaturedPngSection data={{
+          logosImage: "brands.png",
+          title: 'Používáme špičkovou techniku',
+          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam eget nisl. Ut tempus purus at lorem. Donec quis nibh at felis congue commodo. Proin mattis lacinia justo. Ut tempus purus at lorem. Integer vulputate sem a nibh rutrum consequat. Proin in tellus sit amet nibh dignissim sagittis. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis condimentum augue id magna semper rutrum. Phasellus rhoncus. Nullam faucibus mi quis velit. Maecenas libero. Cras elementum.',
+          button: ["Více o nás", "/o-nas"],
+          image: 'cimex.png'
+        }} />
         <CalculatorSection select="carpets" />
-        <CarpetsBanner data={{ title: "Vaše koberce budou zářit čistotou", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })] }} />
+        <CarpetsBanner data={{ image: "clean-hands.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-2">
         <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
       </div>
-      <footer className={"h-16 md:h-0"}>
-
+      <footer className={""}>
+        <Footer />
       </footer>
     </div>
   )

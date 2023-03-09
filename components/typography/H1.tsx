@@ -8,7 +8,7 @@ export interface H1Props extends React.DetailedHTMLProps<React.HTMLAttributes<HT
 
 export function H1({ children, className }: H1Props) {
     return (
-        <h1 className={`text-2xl mob:text-xl mb-4 font-medium ${className}`}>
+        <h1 className={`text-4xl mob:text-2xl mb-4 font-medium ${className}`}>
             {children}
         </h1>
     );

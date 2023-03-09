@@ -60,7 +60,7 @@ export default function Slider({ value, setValue, max }: SliderType) {
 
 
     return (
-        <StyledSlider defaultValue={[0]} value={[value]} max={max} step={1} onValueChange={(what) => setValue(what[0])} >
+        <StyledSlider defaultValue={[0]} value={[value]} max={max} step={10} onValueChange={(what) => setValue(what[0])} >
             <StyledTrack>
                 <StyledRange />
             </StyledTrack>

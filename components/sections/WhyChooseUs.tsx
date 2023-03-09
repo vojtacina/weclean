@@ -3,6 +3,7 @@ import React from 'react'
 import MaxWidthWrapper from '../MaxWidthWrapper'
 import { H1 } from '../typography/H1'
 import { H2 } from '../typography/H2'
+import { H3 } from '../typography/H3'
 import { Paragraph } from '../typography/Paragraph'
 
 function WhySingle({ title, description }: {
@@ -12,7 +13,7 @@ function WhySingle({ title, description }: {
 
     return (
         <div className="">
-            <H2>{title}</H2>
+            <H3>{title}</H3>
             <Paragraph>{description}</Paragraph>
         </div>
     )
@@ -32,13 +33,13 @@ function WhyChooseUs(props: Props) {
             </div>
             <MaxWidthWrapper>
                 <div className="grid md:grid-cols-2">
-                    <div className="md:hidden w-full relative h-96 rounded-lg overflow-hidden mb-8">
+                    <div className="md:hidden w-full relative h-48 rounded-lg overflow-hidden mb-8">
                         <Image src={"/images/vacuum.jpg"} layout="fill" objectFit='cover' alt="Žena s vysavačem, úklidová firma" />
                     </div>
                     <div className="hidden md:block"></div>
                     <div className="">
-                        <H1>Proč si vybrat nás</H1>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <H2>Proč si vybrat nás</H2>
+                        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
                             <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
                             <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />

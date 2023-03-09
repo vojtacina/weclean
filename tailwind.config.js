@@ -13,10 +13,14 @@ module.exports = {
         blue: {
           dark: "#1E76DC",
           primary: "#158FFF",
-          bright: "#349EFF"
+          bright: "#349EFF",
+          bg: "#EDF8FF"
         },
         yellow: {
           brand: "#FFCC57"
+        },
+        green: {
+          call: "#4BB818"
         }
       },
       spacing: {
