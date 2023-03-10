@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { Link } from 'react-scroll'
 import Button, { ButtonProps } from './UI/Button'
 import NextLink from "next/link"
+import { ArrowRight } from 'phosphor-react'
 
 interface Props {
     button: [string, string | (() => void)],
@@ -12,7 +13,10 @@ interface Props {
 function LikeLink({children}:{children:ReactNode}) {
 
     return (
-        <div className="text-blue-primary hover:text-opacity-80 cursor-pointer">{children}</div>
+        <div className="text-blue-primary hover:text-opacity-80 cursor-pointer flex items-center gap-x-2">
+            <div className=""><ArrowRight /></div>
+            <div className="">{children}</div>
+        </div>
     )
 }
 

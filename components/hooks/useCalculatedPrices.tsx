@@ -41,45 +41,9 @@ function calculatePrice(type: string, forms: FormsType, setPrices: Dispatch<SetS
 
     else if (type == "cleaning") {
 
-        // Minimální cena
-        const minPrice = 1000
-
-        // Cena za místnost
-        const roomTax = 125
-
-        // Příplatek za rekonstrukci
-        const dirtyTax = [400, 800]
-
-
-        const bins = [30, 50]
-        const vacuuming = [50, 300]
-        const kitchenette = [80, 300]
-        const wc = [70, 300]
-        const windows = [150, 450]
-        const wiping = [50, 200]
-
-        const fromPrice = minPrice + (( 
-            (forms[type].bins ? bins[0] : 0) +
-            (forms[type].vacuuming ? vacuuming[0] : 0) +
-            (forms[type].kitchenette ? kitchenette[0] : 0) +
-            (forms[type].wc ? wc[0] : 0) +
-            (forms[type].windows ? windows[0] : 0) +
-            (forms[type].wiping ? wiping[0] : 0) +
-            (forms[type].reconstruction_cleaning ? dirtyTax[0] : 0)
-        ) * forms[type].rooms)
-        const toPrice = minPrice + (( 
-            (forms[type].bins ? bins[1] : 0) +
-            (forms[type].vacuuming ? vacuuming[1] : 0) +
-            (forms[type].kitchenette ? kitchenette[1] : 0) +
-            (forms[type].wc ? wc[1] : 0) +
-            (forms[type].windows ? windows[1] : 0) +
-            (forms[type].wiping ? wiping[1] : 0) +
-            (forms[type].reconstruction_cleaning ? dirtyTax[1] : 0)
-        ) * forms[type].rooms)
-
         setPrices({
-            from: fromPrice,
-            to: toPrice
+            from: 0,
+            to: 0
         })
     }
 }

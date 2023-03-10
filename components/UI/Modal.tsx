@@ -29,7 +29,7 @@ export default function Modal({ children, close }: ModalProps) {
             exit={{ opacity: 0, y: isMobile ? 50 : 0, scale: isMobile ? 1 : 0.9 }}
             transition={{ duration: 0.25 }}
             className="fixed bottom-0 left-0 right-0 md:top-0 md:flex md:items-center md:justify-center z-50">
-            <div ref={ref} className="bg-white  p-4 max-h-full md:rounded-md">
+            <div ref={ref} className="bg-white  p-4 md:rounded-md max-h-screen overflow-auto">
                 {children}
             </div>
 

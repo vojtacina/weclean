@@ -22,7 +22,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
     const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
-        setPreferences({ ...preferences, type: data.selected })
+        setPreferences({ ...preferences, type: data.selected as "carpets" | "cleaning" | "floors" })
     }
 
     useEffect(() => {
@@ -101,79 +101,28 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
     )
 }
 
-export function NoFormMessage({ subtitle }: { subtitle: string }) {
+export function NoFormMessage({ subtitle, buttonAction }: { subtitle: string, buttonAction?: () => void }) {
 
     const { preferences, setPreferences } = useContext(CalcFormContext)
 
     return (
-        <div className="w-full h-full bg-gray-100 rounded-md flex items-center py-8 px-16">
+        <div className="w-full md:h-full bg-gray-100 rounded-md flex items-center py-4 md:py-8 px-4 md:px-16">
             <div className="flex-col justify-center items-center text-center">
                 <H2 className="mb-4">Pro cenový odhad nás prosím kontaktujte</H2>
                 <Paragraph className="mb-4">{subtitle}</Paragraph>
                 <Paragraph className="mb-6">Sami vám zavoláme, když nám necháte číslo nebo nám můžete zavolat rovnou.</Paragraph>
                 <div className="inline-flex mb-6">
-                    <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Nechte nám svůj telefon</Button>
+                    <Button primary onClick={buttonAction ?? (() => setPreferences({ ...preferences, modalOpened: true }))}><>Nechte nám <span className="hidden sm:block">&nbsp;svůj&nbsp;</span> telefon</></Button>
                 </div>
                 <Paragraph>nebo nám můžete</Paragraph>
                 <div className="flex justify-center items-baseline gap-2">
                     <Paragraph>zavolat na:</Paragraph>
                     <a href="tel:777772054" className="font-medium text-2xl">77777 20 54</a>
                 </div>
-                <div className="mt-4">
+                {/* <div className="mt-4">
                     <VisitCard />
-                </div>
+                </div> */}
             </div>
-        </div>
-    )
-}
-
-export function CleaningCalculator() {
-
-    const { forms, setForms } = useContext(CalcFormContext)
-
-
-    return (
-        <div className="text-sm md:text-base">
-            <div className="mt-0">
-                <div className="flex justify-between">
-                    <div className="">Počet místností, ve kterých se bude uklízet</div>
-                    <div className="">
-                        <NumberInput value={forms.cleaning.rooms} setValue={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, rooms: to } })} />
-                    </div>
-                </div>
-                <div className="mt-4">
-                    <Slider value={forms.cleaning.rooms} setValue={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, rooms: to } })} max={30} />
-                </div>
-            </div>
-            <div className="mt-8">
-                <div className="">
-                    <Checkbox label="Vynesení košů" checked={forms.cleaning.bins} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, bins: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Úklid kuchyně nebo kuchyňky" checked={forms.cleaning.kitchenette} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, kitchenette: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Vysávání koberců" checked={forms.cleaning.vacuuming} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, vacuuming: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Úklid a umývání sociálních zařízení a koupelen" checked={forms.cleaning.wc} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, wc: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Umývání oken" checked={forms.cleaning.windows} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, windows: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Vytírání" checked={forms.cleaning.wiping} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, wiping: to } })} />
-                </div>
-                <div className="mt-2">
-                    <Checkbox label="Jde o úklid po rekonstrukci, malování nebo je prostor silně znečištěný" checked={forms.cleaning.reconstruction_cleaning} setChecked={(to) => setForms({ ...forms, cleaning: { ...forms.cleaning, reconstruction_cleaning: to } })} />
-                </div>
-            </div>
-            <div className="mt-8">
-                <div className="w-full bg-gray-100 rounded-md p-4">
-                    Mějte na paměti, že výpočet ceny úklidových služeb je velmi přibližný a proto je rozmezí cen tak velké. Přesnější cenu vám rádi sdělíme po odeslání poptávky.
-                </div>
-            </div>
-
         </div>
     )
 }
@@ -205,7 +154,7 @@ export function CarpetsCalculator() {
                     <Checkbox label="Místnosti jsou členité a obashují nábytek, židle apod." checked={forms.carpets.isSmall} setChecked={(to) => setForms({ ...forms, carpets: { ...forms.carpets, isSmall: to } })} />
                 </div>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 hidden md:block">
                 <div className="w-full bg-gray-100 rounded-md p-4">
                     Po odeslání poptávky vám zavoláme a domluvíme se na termínu a možnostech dokončení zakázky.
                 </div>

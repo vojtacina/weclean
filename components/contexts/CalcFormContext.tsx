@@ -1,17 +1,16 @@
 import { useState, createContext, useEffect, ReactElement, SetStateAction, Dispatch } from "react";
 import { FormsType } from "../types/FormsType";
+import { PreferencesType } from "../types/PreferencesType";
 
 const preferencesDefault = {
     type: "carpets",
+    contactType: "phone",
+    name: "",
     phone: "",
     email: "",
+    note: "",
     modalOpened: false
-} as {
-    type: "carpets" | "cleaning" | "floors",
-    phone: string,
-    email: string,
-    modalOpened: boolean
-}
+} as PreferencesType
 
 const formsDefault = {
     carpets: {
@@ -20,24 +19,13 @@ const formsDefault = {
         isDirty: false,
         isSmall: false
     },
-    cleaning: {
-        area: 0,
-        rooms: 0,
-        wc: false,
-        bins: false,
-        vacuuming: false,
-        wiping: false,
-        windows: false,
-        kitchenette: false,
-        reconstruction_cleaning: false
-    }
 } as FormsType
 
 
 
-export const CalcFormContext = createContext({ 
-    preferences: preferencesDefault, 
-    setPreferences: {} as any,
+export const CalcFormContext = createContext({
+    preferences: preferencesDefault,
+    setPreferences: {} as Dispatch<SetStateAction<PreferencesType>>,
     forms: formsDefault,
     setForms: {} as Dispatch<SetStateAction<FormsType>>
 });

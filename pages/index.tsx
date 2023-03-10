@@ -35,9 +35,9 @@ const Home: NextPage = () => {
           ]
         }} />
         <ServicesSection data={[
-          { title: "Čištění koberců", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] },
-          { title: "Úklid kanceláří", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] },
-          { title: "Broušení povrchů", description: "Tohle je description", button: ["Spočítat", "#kalkulacka"] }
+          { title: "Čištění koberců", description: "Tohle je description", button: ["Více o čištění koberců", "/sluzby/cisteni-kobercu"] },
+          { title: "Úklid kanceláří", description: "Tohle je description", button: ["Více o úklidech", "/sluzby/uklid-kancelari-brno"] },
+          { title: "Broušení povrchů", description: "Tohle je description", button: ["Více o této službě", "/sluzby/udrzba-podlah-brno"] }
         ]} />
         <WhyChooseUs />
         <FeaturedPngSection data={{

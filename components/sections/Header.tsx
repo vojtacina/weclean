@@ -4,10 +4,12 @@ import { DotsThree, DotsThreeVertical, Hamburger } from 'phosphor-react'
 import NextLink from 'next/link'
 import { Link } from 'react-scroll'
 
-interface Props { }
+interface Props { 
+    invert?: boolean
+}
 
 function Header(props: Props) {
-    const { } = props
+    const { invert } = props
 
     const [scrollPosition, setScrollPosition] = useState(0)
     const handleScroll = () => {
@@ -26,9 +28,9 @@ function Header(props: Props) {
     return (
         <>
 
-            <div className={`absolute z-20 top-0 left-0 right-0 p-4 flex justify-between text-white duration-200 ${scrollPosition > 48 && "bg-blue-darke"}`}>
+            <div className={`absolute z-20 top-0 left-0 right-0 p-4 flex justify-between ${invert ? "text-black" : "text-white"}  text-white duration-200 ${scrollPosition > 48 && "bg-blue-darke"}`}>
                 <NextLink href='/' className="relative z-20 w-48 h-6 md:h-8">
-                    <Image src="/images/focuscleaning.png" priority fill className='object-contain object-left' alt="WeClean logo společnosti" />
+                    <Image src={`/images/focuscleaning_${invert ? "black" : "white"}.svg`} priority fill className='object-contain object-left' alt="WeClean logo společnosti" />
                 </NextLink>
                 <div className="hidden md:flex justify-around pr-6">
                     <MenuLink link={["Úvod", "/"]} />
