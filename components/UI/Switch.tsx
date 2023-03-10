@@ -39,7 +39,7 @@ function Item({ data, current, setActive }: {
 }) {
     return (
         <div className="p-3px w-full h-full">
-            <div onClick={() => setActive()} className={"text-brown800 cursor-pointer w-full h-full flex items-center justify-center md:px-8 " + (current == data.selected ? " bg-white rounded-md shadow-lg text-black " : " hover:opacity-75")}>{data.options.filter(item => item.value == current)[0].label}</div>
+            <div onClick={() => setActive()} className={"text-brown800 cursor-pointer w-full h-full flex items-center justify-center md:px-2 " + (current == data.selected ? " bg-white rounded-md shadow-lg text-black " : " hover:opacity-75")}>{data.options.filter(item => item.value == current)[0].label}</div>
         </div>
     )
 }

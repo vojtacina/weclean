@@ -55,8 +55,8 @@ function Onas(props: Props) {
                         </div>
                         <div className="mt-12">
                             <H2 className='text-center'>Naši spokojení klienti</H2>
-                            <Paragraph className='text-center md:px-64 mb-8'>Více než 25 let poskytujeme služby firmám a jednotlivcům. Za tu dobu jde například o tyto firmy:</Paragraph>
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+                            <Paragraph className='text-center md:px-64'>Více než 25 let poskytujeme služby firmám a jednotlivcům. Za tu dobu jde například o tyto firmy:</Paragraph>
+                            <div className="grid mt-8 sm:grid-cols-2 md:grid-cols-3 gap-6">
                                 {clients.map(client => (
                                     <div key={`client_${client.name}`} className="">
                                         <Client name={client.name} logo={client.logo} description={client.description} url={client.url} />
@@ -95,7 +95,7 @@ function Client({ name, logo, description, url }: {
 }) {
 
     return (
-        <Link className="flex h-full items-start justify-between gap-x-4 p-4 border hover:border-gray-700 rounded-md" href={url} target="_blank">
+        <Link className="flex h-full items-start justify-between gap-x-4 p-4 border duration-200 hover:border-gray-400 rounded-md" href={url} target="_blank">
             <div className="">
                 <H3>{name}</H3>
                 <Paragraph>{description}</Paragraph>

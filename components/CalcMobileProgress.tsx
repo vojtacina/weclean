@@ -82,8 +82,8 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                 )
             }
             {(step == 3) &&
-                <div className="md:max-w-md">
-                    <div className="text-lg font-semibold mb-2 flex items-center justify-between">
+                <div className="md:max-w-xs">
+                    <div className="text-lg md:hidden font-semibold mb-2 flex items-center justify-between">
                         <div className="">Ještě poslední krok...</div>
                         <div className="cursor-pointer" onClick={() => setPreferences({ ...preferences, modalOpened: false })}><X size={24} /></div>
                     </div>

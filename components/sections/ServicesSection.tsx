@@ -38,7 +38,7 @@ function Service({ title, subtitle, button }: ServiceType) {
 
     return (
         <>
-            <div onClick={() => setOpened(!opened)} className="text-black w-full bg-gray-100 p-6 rounded-xl">
+            <div onClick={() => setOpened(!opened)} className="text-black w-full bg-gray-100 p-6 rounded-xl md:p-0 md:bg-transparent ">
                 <H2>{title}</H2>
                 <Paragraph className="opacity-75">{subtitle}</Paragraph>
                 {button &&
