@@ -22,8 +22,8 @@ const Home: NextPage = () => {
   return (
     <div className={"font-archivo bg-gray-100"}>
       <Head>
-        <title>Čištění koberců Brno a okolí — FocusCleaning</title>
-        <meta name="description" content="Profi čištění koberců pro firmy a průmysl. Jsme zavedená firma od roku 1996. On-line kalkulace ceny zdarma a hned. Garantujeme 100% spokojenost." />
+        <title>Čištění koberců Brno a okolí — Focus Cleaning</title>
+        <meta name="description" content="Profi extrakční čištění koberců pro komerční zákazníky. Více než 25 zkušeností. On-line kalkulace ceny zdarma a hned. Jsme tu od roku 1996. " />
       </Head>
       <nav>
         <Header />

@@ -22,8 +22,8 @@ const Home: NextPage = () => {
     return (
         <div className={"font-archivo bg-gray-100"}>
             <Head>
-                <title>Péče o podlahy a žulové schody Brno — FocusCleaning</title>
-                <meta name="description" content="Nabízíme úklidové služby a čištění koberců pro firmy a průmysl. On-line kalkulace ceny zdarma a hned. Garantujeme 100% spokojenost." />
+                <title>Péče o podlahy a žulové schody Brno — Focus Cleaning</title>
+                <meta name="description" content="Obnova žulových schodišť, broušení podlah a aplikace polymerních vosků. Prodlužujeme životnost vašeho majetku. Více než 25 let zkušeností. Jsme tu od roku 1996." />
             </Head>
             <nav>
                 <Header />

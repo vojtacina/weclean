@@ -29,8 +29,8 @@ function Onas(props: Props) {
     return (
         <div className={"font-archivo bg-gray-100"}>
             <Head>
-                <title>Profesionální úklid a čištění koberců Brno a okolí — FocusCleaning</title>
-                <meta name="description" content="Nabízíme úklidové služby a čištění koberců pro firmy a průmysl. On-line kalkulace ceny zdarma a hned. Garantujeme 100% spokojenost." />
+                <title>O nás - Focus Cleaning</title>
+                <meta name="description" content="Jsme firma s dlouholetou tradicí sahající až do roku 1996, kdy byla firma založena. Za tu dobu již máme spoustu referencí a dobrých hodnocení. 50+ klientů." />
             </Head>
             <nav>
                 <Header invert />

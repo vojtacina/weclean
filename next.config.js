@@ -4,7 +4,11 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     scrollRestoration: true
-  }
+  },
+  i18n: {
+    locales: ["cs"],
+    defaultLocale: "cs",
+  },
 }
 
 module.exports = nextConfig
