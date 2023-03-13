@@ -42,18 +42,16 @@ function Onas(props: Props) {
 
                         <div className="md:px-32">
                             <H1 className='md:text-5xl font-bold text-center mb-16'>O firmě Focus Cleaning</H1>
-                            <div className="italic">
-                                <Paragraph>Každá firma se vyvíjí, mění své strategie, inovuje systém řízení a s ním i strukturu zaměstnanců. Od svých začátků, kdy jsem zaměstnával rodinu a své přátele, jsme společně ušli dlouhou cestu. Přesto jsem si i po čtrnácti letech zachoval ideály, které jsem měl už v počátcích svého podnikání. Byly to poctivě odvedená práce a úcta k člověku. Proto dnes mohu říci, že i když naše firma doznala za oněch čtrnáct let velkých změn, v jádru zůstala stejná.</Paragraph>
-                                <Paragraph>Mým přáním je usnadnit vám alespoň malou část rozhodování. Jsem připraven nabídnout vám naše kompletní služby a poskytnout vám v plné míře to, co očekáváte, totiž kvalitní a pohodlný servis.</Paragraph>
-                                <Paragraph>V naší firmě neustále hledáme nové a lepší způsoby, jak zajistit pro svého klienta příjemné a čisté prostředí, které je nutnou podmínkou k jeho vlastnímu rozvoji.</Paragraph>
-                                <Paragraph>Pro vás, našeho partnera, je důležité, že nezabezpečujeme pouze úklid, ale že odpovídajícím způsobem, na vysoké profesionální úrovni chráníme, ošetřujeme a prodlužujeme životnost vašeho majetku. Velice si vážím toho, že i v dnešní době je mnoho společností, které toto oceňují.</Paragraph>
-                                <Paragraph>Držíte v rukou tuto prezentaci jako vizitku naší práce. Věřím, že pro vás bude příjemným zážitkem zjištění, jak mnoho nám záleží na vašem pocitu dobré volby, na vytvoření skutečného partnerství a výsledného uspokojení z dobře odvedené práce.</Paragraph>
+                            <div className="">
+                                <Paragraph>Činnost společnosti zahájil v roce 1996 Viktor Cina, který je dodnes jejím jednatelem. Na počátku působil jako fyzická osoba a zaměstnával svou rodinu a přátele. Za téměř tři desítky let existence prošla firma řadou formálních i faktických změn, které postupně vedly ke zjednodušení postupů, nastavení přímé komunikace se zákazníkem a četným přizpůsobením vůči vývoji na trhu. Výsledkem je společnost, která nabízí komplexní servis a minimalizuje čas, který zákazník stráví organizací úklidové služby podle svých představ.</Paragraph>
+                                <Paragraph>Ve firmě rozvíjíme to, co se nám v práci dlouhodobě osvědčilo. Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti. Kvalitním úklidem zbavujeme interiéry nežádoucích nečistot, ale zároveň odpovídajícím způsobem ošetřujeme majetek našich klientů, chráníme ho a prodlužujeme jeho životnost.</Paragraph>
+                                <Paragraph>Mnoho zákazníků nám dlouhodobě zachovává věrnost. Velice si toho vážíme a vnímáme to jako závazek do budoucnosti</Paragraph>
                             </div>
                             <div className="flex justify-end mt-8">
                                 <VisitCard />
                             </div>
                         </div>
-                        <div className="mt-12">
+                        <div id="klienti" className="mt-12">
                             <H2 className='text-center'>Naši spokojení klienti</H2>
                             <Paragraph className='text-center md:px-64'>Více než 25 let poskytujeme služby firmám a jednotlivcům. Za tu dobu jde například o tyto firmy:</Paragraph>
                             <div className="grid mt-8 sm:grid-cols-2 md:grid-cols-3 gap-6">

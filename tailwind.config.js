@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       spacing: {
-        '1.5': '6px'
+        '1.5': '6px',
       },
       ringWidth: {
         '3': '3px'

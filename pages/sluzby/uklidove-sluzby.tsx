@@ -36,24 +36,24 @@ const Home: NextPage = () => {
           ]
         }} />
         <ServicesSection data={[
-          { title: "Pravidelné úklidy", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." },
-          { title: "Úklid před prodejem", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher."},
-          { title: "Mytí oken", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." }
+          { title: "Pravidelné úklidy", description: "Zajistíme komplexní pravidelný i jednorázový úklid vašich kanceláří či administrativních budov. Zaručujeme vám profesionální a individuální přístup." },
+          { title: "Úklid před prodejem", description: "Ozvěte se nám, pokud potřebujete pomoct s kompletním úklidem před prodejem nebo dalším pronájmem komerční nemovitosti."},
+          { title: "Mytí oken", description: "Součástí našich služeb je také mytí vnitřních částí oken, skleněných dvěří, příček a dalšího skla - a to do vysokého lesku. " }
         ]} />
         <WhyChooseUs image="hands.jpg" />
         <WeDoNine data={[
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "Luxování", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
-          {name: "... a ještě mnohem více", description: "Profesionální čištění koberců extrakční metodou i u vás doma."},
+          {name: "Luxování", description: "Rychlé a účinné vysávání jako součást běžného uklidu."},
+          {name: "Vytírání", description: "Jednoduché vytírání mopem nebo speciálním tříkotoučovým strojem."},
+          {name: "Mytí oken", description: "Umývání a leštění skel, oken, skleněných dvěří a příček."},
+          {name: "Vynášení košů", description: "Zajistíme vynešení všech košů a vložíme čisté sáčky."},
+          {name: "Úklid WC", description: "Sociální zařízení jsou první na řadě, pokud jde o úklid."},
+          {name: "Úklid kuchyněk", description: "Nepořádek v kuchyňkách i neumyté nádobí jednoduše zpacifikujeme."},
+          {name: "Zalévání květin", description: "Víme, jak je jednoduché zapomenout zalít rostliny. Uděláme to za vás."},
+          {name: "Papírové utěrky", description: "Zajistíme dodávky a výměnu papírových utěrek, toaleťáků a dalšího."},
+          {name: "... a ještě mnohem více", description: "Dokážeme vyhovět širokému spektru potřeb našich klientů."},
         ]} />
         <CalculatorSection select="cleaning" />
-        <CarpetsBanner data={{ image: "clean-hands.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Více o nás", "/o-nas"] }} />
+        <CarpetsBanner data={{ image: "clean-hands.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">

@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import { CalcFormContextProvider } from '../components/contexts/CalcFormContext'
 import Head from 'next/head'
 import ModalsWrapper from '../components/ModalsWrapper'
+import { Analytics } from '@vercel/analytics/react'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -18,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <Component {...pageProps} />
+        <Analytics />
       </ModalsWrapper>
     </CalcFormContextProvider>
   )

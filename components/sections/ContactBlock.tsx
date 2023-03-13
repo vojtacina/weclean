@@ -37,15 +37,15 @@ export default function ContactBlock() {
                             <CheckLabel>50+ spokojených klientů</CheckLabel>
                         </div>
                         <div className="mt-4 italic">
-                            „Citát táty“
+                            „Věřím, že pro vás bude příjemným zážitkem zjištění, jak mnoho nám záleží na vašem pocitu dobré volby, na vytvoření skutečného partnerství a výsledného uspokojení z dobře odvedené práce.“
                         </div>
                         <div className="mt-4">
                             <VisitCard />
                         </div>
                     </div>
                     <div className="hidden md:block">
-                        <div className="">
-                            <iframe src="https://www.google.com/maps/d/embed?mid=1HQzXer-GueYBBq6sKsOTk29WxdHbGH4&hl=cs&ehbc=2E312F" width="100%" height="480"></iframe>
+                        <div className="relative w-full h-96 rounded-lg overflow-hidden">
+                            <Image src="/images/map.png" fill className="object-cover" alt={"Oblast působení - Morava"} />
                         </div>
                     </div>
                     <div className="md:col-span-2">

@@ -40,8 +40,8 @@ const Home: NextPage = () => {
                     { title: "Broušení žuly", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." }
                 ]} />
                 <WhyChooseUs image="hands.jpg" />
-                <CalculatorSection select="cleaning" />
-                <CarpetsBanner data={{ image: "duo-floor.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Více o nás", "/o-nas"] }} />
+                <CalculatorSection select="floors" />
+                <CarpetsBanner data={{ image: "duo-floor.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
                 <ContactBlock />
             </main>
             <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">

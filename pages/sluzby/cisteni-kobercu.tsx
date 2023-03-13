@@ -36,20 +36,20 @@ const Home: NextPage = () => {
           ]
         }} />
         <ServicesSection data={[
-          { title: "Kancelářské prostory", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." },
-          { title: "Židle, křesla, pohovky", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher."},
-          { title: "Kusové koberce", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." }
+          { title: "Kancelářské prostory", description: "Běžně čistíme koberce klientům v kancelářských prostorách a to i těch, jejichž rozloha se blíží 1000 m²." },
+          { title: "Židle, křesla, pohovky", description: "Dokážeme precizně vyčistit extrakční metodou čalounění židlí, křesel, matrací a pohovek."},
+          { title: "Kusové koberce", description: "Pokud se ve vašich prostorách nacházejí i menší kusové koberce, vyčistíme je také obdobným způsobem, jako ty velké." }
         ]} />
         <WhyChooseUs />
         <FeaturedPngSection data={{
           logosImage: "brands.png",
           title: 'Používáme špičkovou techniku',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam eget nisl. Ut tempus purus at lorem. Donec quis nibh at felis congue commodo. Proin mattis lacinia justo. Ut tempus purus at lorem. Integer vulputate sem a nibh rutrum consequat. Proin in tellus sit amet nibh dignissim sagittis. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis condimentum augue id magna semper rutrum. Phasellus rhoncus. Nullam faucibus mi quis velit. Maecenas libero. Cras elementum.',
+          description: 'Čištění koberců v soukromé i průmyslové sféře zajišťujeme již více než 25 let. Používáme osvědčenou čisticí techniku od švýcarské firmy Cleanfix a britského Cimexu. Stroje CIMEX CYCLONE umožňují unikátní dvoufázové čištění koberců systémem tří rotujících kartáčů, kterým lze dosáhnout výjimečně dobrého výsledku čištění. Vedle koberců zvládneme vyčistit také veškerý čalouněný nábytek.',
           button: ["Více o nás", "/o-nas"],
           image: 'cimex.png'
         }} />
         <CalculatorSection select="carpets" />
-        <CarpetsBanner data={{ image: "bannerbg.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Používáme profesionální čistící stroje značky Kärcher a účinnou chemii, která zbaví koberec všech viditelných i neviditelných nečistot.", button: ["Více o nás", "/o-nas"] }} />
+        <CarpetsBanner data={{ image: "bannerbg.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">

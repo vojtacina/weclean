@@ -62,14 +62,14 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                                             <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
                                         </div>
                                         <div className="">
-                                            <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Objednat</Button>
+                                            <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Nezávazně poptat</Button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         }
                         {preferences.type != "carpets" &&
-                            <NoFormMessage subtitle="Určit cenu za úklid kanceláří je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce." />
+                            <NoFormMessage subtitle={`Určit cenu za ${preferences.type == "cleaning" ?  "úklid kanceláří": "obnovu povrchů, broušení schodišť a další služby"} je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce.`} />
                         }
                     </div>
                     <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded-md">
@@ -90,7 +90,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             <Image src="/images/references.png" alt="Loga firem našich klientů" className=" md:object-left" layout="fill" objectFit="contain" />
                             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-r from-transparent to-blue-bg"></div>
                         </div>
-                        <Link href={"/o-nas"}>
+                        <Link href={"/o-nas#klienti"}>
                         <Button>Zobrazit další reference</Button>
                         </Link>
 

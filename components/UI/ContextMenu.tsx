@@ -3,7 +3,7 @@ import React, { ReactNode, useContext } from 'react'
 
 interface Props {
     children?: ReactNode,
-    options: Array<{ text: string | any, value: string | number | any, disabled?: boolean }>,
+    options: Array<{ text?: string | any, value?: string | number | any, disabled?: boolean, group?: string, options?: Array<{ text?: string | any, value?: string | number | any, disabled?: boolean}> }>,
     value: string,
     setValue: (to:string) => void
 }
@@ -25,6 +25,13 @@ function ContextMenu(props: Props) {
                 >
                  {
                     options.map((o, i) =>
+                        o.group ? 
+                        <optgroup label={o.group}>
+                            {o.options?.map(opt => (
+                                 <option key={`option-gr-${i}`} value={opt.value} disabled={opt.disabled}>{opt.text}</option>
+                            ))}
+                        </optgroup>
+                        :
                         <option key={`option-${i}`} value={o.value} disabled={o.disabled}>{o.text}</option>
                     )
                 }

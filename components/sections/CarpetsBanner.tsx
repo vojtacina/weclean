@@ -16,9 +16,11 @@ export default function CarpetsBanner({ data }: {
 
     const { preferences, setPreferences } = useContext(CalcFormContext)
 
+    const image = require(`../../public/images/${data?.image}`)
+
     return (
         <div className=" w-full relative flex items-center justify-start overflow-hidden">
-            <Image src={`/images/${data.image}`} blurDataURL={`/images/${data.image}`} layout="fill" objectFit="cover" className="z-0" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+            <Image src={image} fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className=" py-8 md:py-24  text-white w-full z-10">
                 <MaxWidthWrapper>
                     <div className="md:w-1/3">

@@ -42,10 +42,10 @@ function WhyChooseUs(props: Props) {
                     <div className="">
                         <H2>Proč si vybrat nás</H2>
                         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
-                            <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
-                            <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
-                            <WhySingle title="Zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
+                            <WhySingle title="Dlouholeté zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
+                            <WhySingle title="Rychlá a jasná domluva" description='Dokážeme se flexibilně se zákazníkem domluvit a termínu i technologii. Včas a jasně.' />
+                            <WhySingle title="Nebojíme se výzev" description='Máme větší množství profesionálních čistících strojů a neodradí nás ani velké prostory nebo zažraná špína.' />
+                            <WhySingle title="Pracujeme i o víkendu" description='Pokud je to pro provoz vašeho podnikání nutné, můžeme se na čištění nebo úklidu domluvit i o víkendu.' />
                         </div>
                     </div>
 

@@ -14,8 +14,7 @@ const preferencesDefault = {
 
 const formsDefault = {
     carpets: {
-        area: 0,
-        rooms: 0,
+        area: 200,
         isDirty: false,
         isSmall: false
     },

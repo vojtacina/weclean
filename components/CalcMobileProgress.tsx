@@ -40,8 +40,9 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             selected: preferences.type,
                             options:
                                 [
-                                    { label: "Čištění koberců", value: "carpets", description: "Profesionální čištění kusových i velkých koberců extrakční metodou." },
-                                    { label: "Úklidové služby", value: "cleaning", description: "Pravidelný nebo jednorázový úklid kanceláří a domácností." }
+                                    { label: "Čištění koberců", value: "carpets", description: "Profesionální čištění koberců mechanickou a extrakční metodou." },
+                                    { label: "Úklidové služby", value: "cleaning", description: "Pravidelný nebo jednorázový úklid kanceláří a komerčních prostor." },
+                                    { label: "Žulové schody/podlahy", value: "floors", description: "Broušení žulových schodů, údržba podlah." }
                                 ]
                         }} setData={setSwitchData} />
                     </div>

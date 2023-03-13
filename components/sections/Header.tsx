@@ -45,7 +45,6 @@ function Header(props: Props) {
                     <Image src={`/images/focuscleaning_${invert ? "black" : "white"}.svg`} priority fill className='object-contain object-left' alt="WeClean logo společnosti" />
                 </NextLink>
                 <div className="hidden lg:flex justify-around pr-6">
-                    <MenuLink link={["Úvod", "/"]} />
                     <MenuLink link={["Čištění koberců", "/sluzby/cisteni-kobercu"]} />
                     <MenuLink link={["Úklidové služby", "/sluzby/uklidove-sluzby"]} />
                     <MenuLink link={["Péče o podlahy", "/sluzby/pece-o-podlahy"]} />
@@ -53,16 +52,32 @@ function Header(props: Props) {
                 </div>
                 <div className="lg:hidden">
                     <ContextMenu options={[
-                        { value: "/", text: "Úvod" },
                         { value: "/sluzby/cisteni-kobercu", text: "Čištění koberců" },
                         { value: "/sluzby/uklidove-sluzby", text: "Úklidové služby" },
                         { value: "/sluzby/pece-o-podlahy", text: "Péče o podlahy" },
                         { value: "/o-nas", text: "O nás" },
                     ]} value={selPage} setValue={(to) => setSelPage(to)}>
-                        <DotsThreeVertical size={24} />
+                        <div className="w-12 flex items-center justify-end">
+                            <DotsThreeVertical size={24} />
+                        </div>
                     </ContextMenu>
                 </div>
             </div>
+            {(scrollPosition > 500) &&
+                <div className="fixed top-4 right-4 z-20">
+                    <ContextMenu options={[
+                        { value: "/sluzby/cisteni-kobercu", text: "Čištění koberců" },
+                        { value: "/sluzby/uklidove-sluzby", text: "Úklidové služby" },
+                        { value: "/sluzby/pece-o-podlahy", text: "Péče o podlahy" },
+                        { value: "/o-nas", text: "O nás" },
+                    ]} value={selPage} setValue={(to) => setSelPage(to)}>
+                        <div className="w-12 flex items-center justify-end">
+                            <DotsThreeVertical size={24} />
+                        </div>
+                    </ContextMenu>
+                </div>
+            }
+
         </>
     )
 }
