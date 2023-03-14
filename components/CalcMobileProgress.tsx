@@ -95,13 +95,13 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                         ]
                     }} setData={setContactSwitch} />
                     <div className="mt-4 grid gap-y-2">
-                        <TextField icon={<User size={24} />} value={preferences.name} label="Jméno a příjmení" setValue={(to) => setPreferences({ ...preferences, name: to })} />
+                        <TextField name="fullname" icon={<User size={24} />} value={preferences.name} label="Jméno a příjmení" setValue={(to) => setPreferences({ ...preferences, name: to })} />
                         {(preferences?.contactType == "phone") &&
-                            <TextField icon={<Phone size={24} />} type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
+                            <TextField name="phone" icon={<Phone size={24} />} type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
                         }
                         {(preferences?.contactType == "email") &&
                             <>
-                                <TextField icon={<EnvelopeSimple size={24} />} type="email" value={preferences.email} label="E-mailová adresa" setValue={(to) => setPreferences({ ...preferences, email: to })} />
+                                <TextField name="email" icon={<EnvelopeSimple size={24} />} type="email" value={preferences.email} label="E-mailová adresa" setValue={(to) => setPreferences({ ...preferences, email: to })} />
                                 <TextArea value={preferences.note} rows={3} label="Zde můžete blíže specifikovat poptávku" setValue={(to) => setPreferences({ ...preferences, note: to })} />
                             </>
                         }

@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         <ContactBlock />
       </main>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">
-        <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
+        <Button className='shadow-lg' primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
       </div>
       <footer className={""}>
         <Footer />
