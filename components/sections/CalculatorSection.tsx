@@ -69,7 +69,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             </div>
                         }
                         {preferences.type != "carpets" &&
-                            <NoFormMessage subtitle={`Určit cenu za ${preferences.type == "cleaning" ?  "úklid kanceláří": "obnovu povrchů, broušení schodišť a další služby"} je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce.`} />
+                            <NoFormMessage subtitle={`Určit cenu za ${preferences.type == "cleaning" ? "úklid kanceláří" : "obnovu povrchů, broušení schodišť a další služby"} je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce.`} />
                         }
                     </div>
                     <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded-md">
@@ -91,7 +91,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-r from-transparent to-blue-bg"></div>
                         </div>
                         <Link href={"/o-nas#klienti"}>
-                        <Button>Zobrazit další reference</Button>
+                            <Button>Zobrazit další reference</Button>
                         </Link>
 
                     </div>
@@ -135,16 +135,27 @@ export function CarpetsCalculator() {
     return (
         <div className="">
             <div className="">
-                <div className="flex justify-between">
+                <div className="flex items-center justify-between">
                     <label htmlFor="area">Plocha koberců</label>
-                    <div className="flex gap-2">
-                        <NumberInput id="area" min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
-                        <div className="text-xl font-medium">m²</div>
-                    </div>
+
+                    {forms.carpets.area == 0 ?
+                        <div className="text-lg font-semibold">Zatím nevím</div>
+                        :
+                        <div className="flex gap-2">
+                            <NumberInput id="area" min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
+                            <div className="text-xl font-medium">m²</div>
+                        </div>
+                    }
+
                 </div>
                 <div className="mt-4">
                     <Slider aria-label="Plocha koberců" value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={999} />
                 </div>
+                {forms.carpets.area != 0 &&
+                    <div className="">
+                        <div onClick={() => setForms({ ...forms, carpets: { ...forms.carpets, area: 0 } })} className="text-blue-primary hover:opacity-80 cursor-pointer">Zatím nevíte?</div>
+                    </div>
+                }
             </div>
             <div className="mt-8">
                 <div className="">

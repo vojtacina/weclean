@@ -1,10 +1,10 @@
-import { ReactElement } from "react"
+import { ReactElement, ReactNode } from "react"
 import { motion } from "framer-motion"
 
 export interface ButtonProps {
     primary?: boolean,
     link?: boolean
-    children: string | ReactElement,
+    children: ReactNode,
     onClick?: () => void,
     className?: string
 }

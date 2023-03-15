@@ -5,5 +5,6 @@ export interface PreferencesType {
     phone: string,
     email: string,
     note: string,
-    modalOpened: boolean
+    modalOpened: boolean,
+    modalSent: boolean
 }

@@ -114,7 +114,9 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </div>
                         <div className="block">
-                            <Button primary onClick={() => close()}>
+                            <Button primary onClick={() => {
+                                setPreferences({...preferences, modalSent: true, modalOpened: false})
+                            }}>
                                 <div className="flex items-center gap-x-1">
                                     {(preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
                                     <div className="text-lg">Potvrdit</div>

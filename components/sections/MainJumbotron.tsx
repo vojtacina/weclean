@@ -25,7 +25,7 @@ export default function MainJumbotron({ data }: {
         <div className=" w-full relative flex items-center justify-start bg-black min-h-screen md:min-h-0">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-opacity-30 bg-black z-10"></div>
             <Image src={image} priority fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
-            <div className=" pt-32 pb-24 lg:py-48  text-white w-full z-10">
+            <div className=" py-24 lg:py-48  text-white w-full z-10">
                 <MaxWidthWrapper>
                     <div className="">
                         <div className="">

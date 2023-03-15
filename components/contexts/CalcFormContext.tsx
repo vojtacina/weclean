@@ -9,7 +9,8 @@ const preferencesDefault = {
     phone: "",
     email: "",
     note: "",
-    modalOpened: false
+    modalOpened: false,
+    modalSent: false
 } as PreferencesType
 
 const formsDefault = {
@@ -33,6 +34,8 @@ export function CalcFormContextProvider(props: { children: ReactElement | ReactE
 
     const [preferences, setPreferences] = useState(preferencesDefault)
     const [forms, setForms] = useState(formsDefault)
+
+console.log(preferences)
 
     return (
         <CalcFormContext.Provider

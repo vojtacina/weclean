@@ -12,6 +12,7 @@ import WhyChooseUs from '../components/sections/WhyChooseUs'
 import FeaturedPngSection from '../components/sections/FeaturedPngSection'
 import Footer from '../components/sections/Footer'
 import Header from '../components/sections/Header'
+import FixedButton from '../components/fragments/FixedButton'
 
 const Home: NextPage = () => {
 
@@ -51,9 +52,7 @@ const Home: NextPage = () => {
         <CarpetsBanner data={{ image: "clean-hands.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">
-        <Button className='shadow-lg' primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
-      </div>
+      <FixedButton>Spočítat cenu</FixedButton>
       <footer className={""}>
         <Footer />
       </footer>
