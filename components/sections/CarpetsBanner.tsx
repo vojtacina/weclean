@@ -25,7 +25,7 @@ export default function CarpetsBanner({ data }: {
                 <MaxWidthWrapper>
                     <div className="md:w-1/3">
                         <div className="">
-                            <h1 className=" text-2xl mb-1 font-semibold">{data.title}</h1>
+                            <h2 className=" text-2xl mb-1 font-semibold">{data.title}</h2>
                             <div className="opacity-75 font-light mt-4">{data.description}</div>
                         </div>
                         <div className="mt-8 flex items-center gap-4">

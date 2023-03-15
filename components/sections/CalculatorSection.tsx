@@ -136,14 +136,14 @@ export function CarpetsCalculator() {
         <div className="">
             <div className="">
                 <div className="flex justify-between">
-                    <div className="">Plocha koberců</div>
+                    <label htmlFor="area">Plocha koberců</label>
                     <div className="flex gap-2">
-                        <NumberInput min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
+                        <NumberInput id="area" min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
                         <div className="text-xl font-medium">m²</div>
                     </div>
                 </div>
                 <div className="mt-4">
-                    <Slider value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={999} />
+                    <Slider aria-label="Plocha koberců" value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={999} />
                 </div>
             </div>
             <div className="mt-8">

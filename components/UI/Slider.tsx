@@ -53,14 +53,15 @@ const StyledThumb = styled(SliderPrimitive.Thumb, {
 interface SliderType {
     value: number,
     setValue: (to: number) => void,
-    max: number
+    max: number,
+    ["aria-label"]?: string
 }
 
-export default function Slider({ value, setValue, max }: SliderType) {
-
+export default function Slider(props: SliderType) {
+    const { value, setValue, max } = props
 
     return (
-        <StyledSlider defaultValue={[0]} value={[value]} max={max} step={10} onValueChange={(what) => setValue(what[0])} >
+        <StyledSlider aria-label={props['aria-label']} defaultValue={[0]} value={[value]} max={max} step={10} onValueChange={(what) => setValue(what[0])} >
             <StyledTrack>
                 <StyledRange />
             </StyledTrack>

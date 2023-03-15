@@ -26,9 +26,9 @@ function RenderButton(props: Props) {
     return (
         <>
             {typeof button[1] == "string" && (button[1].includes("#")) &&
-                <Link to={button[1].replace("#", "")} spy={true} smooth={true} duration={500} offset={24}>
+                <a href={button[1]}>
                     {link ? <LikeLink>{button?.[0]}</LikeLink> : <Button {...rest}>{button?.[0]}</Button>}
-                </Link>
+                </a>
             }
             {typeof button[1] == "string" && (button[1].includes("/")) &&
                 <NextLink href={button[1]}>
