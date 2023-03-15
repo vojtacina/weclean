@@ -13,6 +13,7 @@
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-popover": "1.0.0",
     "@radix-ui/react-slider": "^1.0.0",
+    "@sendgrid/mail": "^7.7.0",
     "@stitches/react": "^1.2.8",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@vercel/analytics": "^0.1.11",
