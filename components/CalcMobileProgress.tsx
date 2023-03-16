@@ -173,7 +173,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </div>
                         <div className="block">
-                            <Button className={processing ? " bg-slate-300 hover:bg-slate-300 text-slate-800" : ""} primary onClick={() => send()}>
+                            <Button className={`${processing ? " bg-slate-300 hover:bg-slate-300 text-slate-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
                                 <div className="flex items-center gap-x-1">
                                     {(processing) ? <HourglassMedium /> :(preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
                                     <div className="text-lg">{processing ? "Ověřování..." : "Potvrdit"}</div>
