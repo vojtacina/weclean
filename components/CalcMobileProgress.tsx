@@ -22,7 +22,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
     const { preferences, setPreferences, forms } = useContext(CalcFormContext)
     const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
-    const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
+    const [step, setStep] = useState(preferences.modalSent ? 4 : window.innerWidth > 784 ? 3 : 1)
     // const [step, setStep] = useState(window.innerWidth > 784 ? 4 : 4)
     const [processing, setProcessing] = useState(false)
 
@@ -47,9 +47,14 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
         if (preferences.note) {
             details += preferences.note
         }
-        if (preferences.type == "carpets") {
+        if (preferences.type == "carpets" && forms.changed) {
+            if (forms.carpets.area == 0) {
+                details += ((preferences.note ? ", " : "") + " zatím neví kolik m²")
+            }
+            else {
+                details += ((preferences.note ? ", " : "") + forms.carpets.area + " m²")
+            }
 
-            details += ((preferences.note ? ", " : "") + forms.carpets.area + " m²")
             if (forms.carpets.isDirty) {
                 details += ", silné znečištění"
             }
@@ -148,7 +153,10 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                 )
             }
             {(step == 3) &&
-                <form onSubmit={e => e.preventDefault()} className="md:max-w-xs">
+                <form onSubmit={e => {
+                    e.preventDefault()
+                    send()
+                }} className="md:max-w-xs">
                     <div className="text-lg md:hidden font-semibold mb-2 flex items-center justify-between">
                         <div className="">Ještě poslední krok...</div>
                         <div className="cursor-pointer" onClick={() => setPreferences({ ...preferences, modalOpened: false })}><X size={24} /></div>
@@ -179,7 +187,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </div>
                         <div className="block">
-                            <Button type="submit" className={`${processing ? " bg-zinc-300 hover:bg-zinc-300 text-zinc-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
+                            <Button type="submit" className={`${processing ? " bg-zinc-300 hover:bg-zinc-300 text-zinc-800 cursor-not-allowed " : ""}`} primary>
                                 <div className="flex items-center gap-x-1">
                                     {(processing) ? <HourglassMedium /> : (preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
                                     <div className="text-lg">{processing ? "Ověřování..." : "Potvrdit"}</div>

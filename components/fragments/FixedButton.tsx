@@ -12,8 +12,11 @@ function FixedButton(props: Props) {
     const {preferences, setPreferences} = useContext(CalcFormContext)
 
     return (
-        <div className={`fixed bottom-4 left-0 right-0 flex justify-center z-40 ${!preferences.modalSent && "md:hidden" } px-4`}>
+        <div className={`fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4`}>
+            <div className="inline-flex">
             <Button className={`shadow-lg ${preferences.modalSent && "  bg-green-call hover:bg-green-call cursor-not-allowed"}`} primary onClick={() => setPreferences({ ...preferences, modalOpened: preferences?.modalSent ? false : true })}>{preferences?.modalSent ? "Brzy se Vám ozveme 🙂" : props.children}</Button>
+            </div>
+           
         </div>
     )
 }
