@@ -5,7 +5,7 @@ type Data = {
   status: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -21,12 +21,10 @@ export default function handler(
     template_id: "d-215349e3e95249b493cef925bc8c89e8",
     dynamic_template_data: data
   }
-  sgMail
-    .send(msg)
-    .then(() => {
+  
+  await sgMail.send(msg).then(() => {
       console.log('Email to Viktor Cina sent')
-    })
-    .catch((error:any) => {
+    }).catch((error:any) => {
       console.error(error)
     })
 
@@ -37,12 +35,10 @@ export default function handler(
       template_id: "d-2bcbd2fc0702416d85141f9fe9c888a6",
       dynamic_template_data: data
     }
-    sgMail
-      .send(msg)
-      .then(() => {
+
+    await sgMail.send(msg).then(() => {
         console.log('Email to customer sent')
-      })
-      .catch((error:any) => {
+      }).catch((error:any) => {
         console.error(error)
       })
   }
