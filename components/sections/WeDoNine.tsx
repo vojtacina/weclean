@@ -35,7 +35,7 @@ function WeDo({ name, description }: {
 }) {
 
     return (
-        <div className="h-full p-4 border duration-200 rounded-md">
+        <div className="h-full p-4 border duration-200 rounded">
             <div className="">
                 <H3>{name}</H3>
                 <Paragraph>{description}</Paragraph>

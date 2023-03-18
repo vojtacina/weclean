@@ -7,4 +7,5 @@ export interface FormsType {
         isDirty: boolean,
         isSmall: boolean
     },
+    changed: boolean
 }

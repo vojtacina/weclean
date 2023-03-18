@@ -42,7 +42,7 @@ function Item({ data, current, setActive, key }: {
 
     return (
         <div key={key} onClick={() => setActive()}  className={`${isActive ? " " : "border border-transparent"}`}>
-            <div className={`p-5 cursor-pointer rounded-md group flex gap-x-4 items-center ${isActive ? " border-2 border-blue-primary " : "border border-gray-300 hover:border-gray-200"}`}>
+            <div className={`p-5 cursor-pointer rounded group flex gap-x-4 items-center ${isActive ? " border-2 border-blue-primary " : "border border-gray-300 hover:border-gray-200"}`}>
                 <div className="">
                     <div className={`w-6 h-6 flex items-center justify-center rounded-full   ${isActive ? "bg-blue-primary" : "border border-gray-300 group-hover:border-gray-200"}`}>
                         <CheckIcon color='white' width={18} height={18} />

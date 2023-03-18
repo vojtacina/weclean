@@ -23,9 +23,9 @@ export default function ContactBlock() {
             <MaxWidthWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
                     <div className="">
-                        <div className="text-xl font-semibold">Kdo jsme</div>
+                        <div className="text-xl font-medium">Působíme na celé Moravě</div>
                         <div className="text-gray-600">
-                            Focuscleaning uklízí a čistí pro známé firmy napříč odvětvími
+                            Neváhejte se nám ale ozvat, ať už jste odkudkoliv. Rádi navrhneme řešení, které vám bude vyhovovat.
                         </div>
                         <div className="mt-10">
                             <CheckLabel>Čištění koberců extrakční metodou</CheckLabel>
@@ -47,7 +47,7 @@ export default function ContactBlock() {
                         <div className="relative w-full h-96 rounded-lg overflow-hidden">
                             <Image src="/images/map.png" fill className="object-cover" alt={"Oblast působení - Morava"} />
                         </div>
-                        <div className="font-semibold mt-4">Obslužná oblast: Brno, Olomouc a okolí</div>
+                        <div className="font-medium mt-4">Obslužná oblast: Brno, Olomouc a okolí</div>
                         <div className="text-gray-600">Působíme na celé Moravě a rádi za vámi dojedeme. </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function CheckLabel({ children }: { children: string }) {
 
 
     return (
-        <div className="flex text-blue-dark mt-1">
+        <div className="flex text-blue-primary mt-1">
             <div className="">
                 <CheckCircle size={24} weight="fill" />
             </div>

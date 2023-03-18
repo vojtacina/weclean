@@ -1,4 +1,4 @@
-import { SetStateAction, useContext, useState } from "react";
+import { FormEvent, SetStateAction, useContext, useState } from "react";
 import { CarpetsCalculator, NoFormMessage } from "./sections/CalculatorSection";
 import { CalcFormContext } from "./contexts/CalcFormContext";
 import Button from "./UI/Button";
@@ -22,8 +22,8 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
     const { preferences, setPreferences, forms } = useContext(CalcFormContext)
     const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
-    // const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
-    const [step, setStep] = useState(window.innerWidth > 784 ? 4 : 4)
+    const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
+    // const [step, setStep] = useState(window.innerWidth > 784 ? 4 : 4)
     const [processing, setProcessing] = useState(false)
 
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
@@ -44,23 +44,23 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
 
     function humanTextDetails() {
         let details = ""
-        if(preferences.note) {
+        if (preferences.note) {
             details += preferences.note
         }
-        if(preferences.type == "carpets") {
-           
-            details += ((preferences.note ? ", " : "") + forms.carpets.area+ " m²")
-            if(forms.carpets.isDirty) {
+        if (preferences.type == "carpets") {
+
+            details += ((preferences.note ? ", " : "") + forms.carpets.area + " m²")
+            if (forms.carpets.isDirty) {
                 details += ", silné znečištění"
             }
-            if(forms.carpets.isSmall) {
+            if (forms.carpets.isSmall) {
                 details += ", malé nebo málo přístupné místnosti"
             }
             details += ", vypočteno na " + priceFrom + " - " + priceTo + " Kč"
         }
 
-        if(details != "") {
-            return "("+details+")"
+        if (details != "") {
+            return "(" + details + ")"
         }
         else {
             return null
@@ -69,7 +69,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
 
     async function send() {
         setProcessing(true)
-        if(!processing) {
+        if (!processing) {
             try {
                 const res = await post("/api/notify", {
                     fullname: preferences.name,
@@ -77,18 +77,19 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                     service: humanTextFromType(preferences.type),
                     details: humanTextDetails()
                 })
-        
-                if(res) {
+
+                if (res) {
                     setProcessing(false)
-                    setPreferences({ ...preferences, modalSent: true, modalOpened: false })
+                    setPreferences({ ...preferences, modalSent: true })
+                    setStep(4)
                 }
             }
-            catch(err) {
+            catch (err) {
                 alert("Nepodařilo se odeslat poptávku. Kontaktujte nás se svou poptávkou prosím telefonicky nebo e-mailem než chybu opravíme. Děkujeme a omlouváme se za komplikace.")
             }
-            
+
         }
-        
+
     }
 
     return (
@@ -147,7 +148,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                 )
             }
             {(step == 3) &&
-                <div className="md:max-w-xs">
+                <form onSubmit={e => e.preventDefault()} className="md:max-w-xs">
                     <div className="text-lg md:hidden font-semibold mb-2 flex items-center justify-between">
                         <div className="">Ještě poslední krok...</div>
                         <div className="cursor-pointer" onClick={() => setPreferences({ ...preferences, modalOpened: false })}><X size={24} /></div>
@@ -159,13 +160,13 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                         ]
                     }} setData={setContactSwitch} />
                     <div className="mt-4 grid gap-y-2">
-                        <TextField name="fullname" icon={<User size={24} />} value={preferences.name} label="Jméno a příjmení" setValue={(to) => setPreferences({ ...preferences, name: to })} />
+                        <TextField required name="fullname" icon={<User size={24} />} value={preferences.name} label="Jméno a příjmení" setValue={(to) => setPreferences({ ...preferences, name: to })} />
                         {(preferences?.contactType == "phone") &&
-                            <TextField name="phone" icon={<Phone size={24} />} type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
+                            <TextField required name="phone" icon={<Phone size={24} />} type="tel" value={preferences.phone} label="Telefonní číslo" setValue={(to) => setPreferences({ ...preferences, phone: to })} />
                         }
                         {(preferences?.contactType == "email") &&
                             <>
-                                <TextField name="email" icon={<EnvelopeSimple size={24} />} type="email" value={preferences.email} label="E-mailová adresa" setValue={(to) => setPreferences({ ...preferences, email: to })} />
+                                <TextField required name="email" icon={<EnvelopeSimple size={24} />} type="email" value={preferences.email} label="E-mailová adresa" setValue={(to) => setPreferences({ ...preferences, email: to })} />
                                 <TextArea value={preferences.note} rows={3} label="Zde můžete blíže specifikovat poptávku" setValue={(to) => setPreferences({ ...preferences, note: to })} />
                             </>
                         }
@@ -178,16 +179,16 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </div>
                         <div className="block">
-                            <Button className={`${processing ? " bg-zinc-300 hover:bg-zinc-300 text-zinc-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
+                            <Button type="submit" className={`${processing ? " bg-zinc-300 hover:bg-zinc-300 text-zinc-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
                                 <div className="flex items-center gap-x-1">
-                                    {(processing) ? <HourglassMedium /> :(preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
+                                    {(processing) ? <HourglassMedium /> : (preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
                                     <div className="text-lg">{processing ? "Ověřování..." : "Potvrdit"}</div>
                                 </div>
                             </Button>
                         </div>
 
                     </div>
-                </div>
+                </form>
             }
             {step == 4 &&
                 <div className="w-full p-4 flex flex-col gap-8px items-center md:max-w-xs">
@@ -197,7 +198,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                     <H3>Poptávka odeslána</H3>
                     <Paragraph className="text-center">Vaše poptávka byla úspěšně doručena a budeme Vás brzy kontaktovat. Těšíme se na spolupráci.</Paragraph>
                     <div className="mt-4 md:hidden">
-                        <Button link>Zavřít</Button>
+                        <Button onClick={() => setPreferences({ ...preferences, modalOpened: false })} link>Zavřít</Button>
                     </div>
                 </div>
             }

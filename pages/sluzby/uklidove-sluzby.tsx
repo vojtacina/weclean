@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useContext, useState } from 'react'
 import { CalcFormContext } from '../../components/contexts/CalcFormContext';
 import FixedButton from '../../components/fragments/FixedButton';
+import MaxWidthWrapper from '../../components/MaxWidthWrapper';
 import CalculatorSection from '../../components/sections/CalculatorSection';
 import CarpetsBanner from '../../components/sections/CarpetsBanner';
 import ContactBlock from '../../components/sections/ContactBlock';
@@ -12,7 +13,9 @@ import Header from '../../components/sections/Header';
 import MainJumbotron from '../../components/sections/MainJumbotron';
 import ServicesSection from '../../components/sections/ServicesSection';
 import WeDoNine from '../../components/sections/WeDoNine';
+import WhatWeDo from '../../components/sections/WhatWeDo';
 import WhyChooseUs from '../../components/sections/WhyChooseUs';
+import { H2 } from '../../components/typography/H2';
 import Button from '../../components/UI/Button';
 
 
@@ -36,11 +39,13 @@ const Home: NextPage = () => {
             ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]
           ]
         }} />
+       
         <ServicesSection data={[
-          { title: "Pravidelné úklidy", description: "Zajistíme komplexní pravidelný i jednorázový úklid vašich kanceláří či administrativních budov. Zaručujeme vám profesionální a individuální přístup." },
-          { title: "Úklid před prodejem", description: "Ozvěte se nám, pokud potřebujete pomoct s kompletním úklidem před prodejem nebo dalším pronájmem komerční nemovitosti."},
-          { title: "Mytí oken", description: "Součástí našich služeb je také mytí vnitřních částí oken, skleněných dvěří, příček a dalšího skla - a to do vysokého lesku. " }
+          { title: "Pravidelné úklidy", description: "Zajistíme komplexní pravidelný úklid vašich kanceláří, výrobních prostor, obchodů či administrativních budov. A to velmi flexibilně." },
+          { title: "Jednorázový úklid", description: "Úklízíme také jednorázově - například před stěhovánín, pronájmem bytu nebo prodejem nemovitosti. Uklidíme také po večírku a jiných akcích."},
+          { title: "Generální úklid", description: "Úklid po nové stavbě, rekonstrukci nebo úklid jinak silně znečištěných interiérů, které potřebujete rychle dát do pořádku." }
         ]} />
+         <WhatWeDo />
         <WhyChooseUs image="hands.jpg" />
         <WeDoNine data={[
           {name: "Luxování", description: "Rychlé a účinné vysávání jako součást běžného uklidu."},

@@ -44,7 +44,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             [
                                 { label: "Čištění koberců", value: "carpets" },
                                 { label: "Úklidové služby", value: "cleaning" },
-                                { label: "Žulové podlahy/schody", value: "floors" }
+                                { label: "Péče o podlahy", value: "floors" }
                             ]
                     }} setData={setSwitchData} />
                 </div>
@@ -58,7 +58,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                                 <div className="mt-8">
                                     <div className="flex justify-between">
                                         <div className="">
-                                            <div className="text-2xl">Celková cena <span className="text-blue-dark font-bold">od {price(priceFrom)}</span></div>
+                                            <div className="text-2xl">Celková cena <span className="text-blue-dark font-medium">od {price(priceFrom)}</span></div>
                                             <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
                                         </div>
                                         <div className="">
@@ -72,16 +72,16 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             <NoFormMessage subtitle={`Určit cenu za ${preferences.type == "cleaning" ? "úklid kanceláří" : "obnovu povrchů, broušení schodišť a další služby"} je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce.`} />
                         }
                     </div>
-                    <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded-md">
+                    <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded">
 
                         <div className="w-full flex justify-center text-blue-primary">
                             <ShieldCheck size={100} weight="fill" />
                         </div>
                         <div className="mt-6">
-                            Pokud nebudete spokojeni a nebo se nám nepodaří vyčistit to, co jsme slíbili, účtovat nic nebudeme.
+                            Snažíme se odvádět poctivou, pečlivou a kvalitní práci. Přesně takovou, za jakou chcete platit.
                         </div>
                         <div className=" my-4 text-lg font-medium text-black">
-                            Nic tedy neriskujete!
+                            Určitě budete spokojeni i vy!
                         </div>
                         <div>
                             Spokojenost potvrzují i známé firmy, které s námi spolupracují.
@@ -106,7 +106,7 @@ export function NoFormMessage({ subtitle, buttonAction }: { subtitle: string, bu
     const { preferences, setPreferences } = useContext(CalcFormContext)
 
     return (
-        <div className="w-full md:h-full bg-gray-100 rounded-md flex items-center py-4 md:py-8 px-4 md:px-16">
+        <div className="w-full md:h-full bg-gray-100 rounded flex items-center py-4 md:py-8 px-4 md:px-16">
             <div className="flex-col justify-center items-center text-center">
                 <H2 className="mb-4">Pro cenový odhad nás prosím kontaktujte</H2>
                 <Paragraph className="mb-4">{subtitle}</Paragraph>
@@ -142,18 +142,18 @@ export function CarpetsCalculator() {
                         <div className="text-lg font-semibold">Zatím nevím</div>
                         :
                         <div className="flex gap-2">
-                            <NumberInput id="area" min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} />
+                            <NumberInput id="area" min={0} max={999} value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to }, changed: true })} />
                             <div className="text-xl font-medium">m²</div>
                         </div>
                     }
 
                 </div>
                 <div className="mt-4">
-                    <Slider aria-label="Plocha koberců" value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to } })} max={999} />
+                    <Slider aria-label="Plocha koberců" value={forms.carpets.area} setValue={(to) => setForms({ ...forms, carpets: { ...forms.carpets, area: to }, changed: true })} max={999} />
                 </div>
                 {forms.carpets.area != 0 &&
                     <div className="">
-                        <div onClick={() => setForms({ ...forms, carpets: { ...forms.carpets, area: 0 } })} className="text-blue-primary hover:opacity-80 cursor-pointer">Zatím nevíte?</div>
+                        <div onClick={() => setForms({ ...forms, carpets: { ...forms.carpets, area: 0 }, changed: true })} className="text-blue-primary hover:opacity-80 cursor-pointer">Zatím nevíte?</div>
                     </div>
                 }
             </div>
@@ -166,7 +166,7 @@ export function CarpetsCalculator() {
                 </div>
             </div>
             <div className="mt-8 hidden md:block">
-                <div className="w-full bg-gray-100 rounded-md p-4">
+                <div className="w-full bg-gray-100 rounded p-4">
                     Po odeslání poptávky vám zavoláme a domluvíme se na termínu a možnostech dokončení zakázky.
                 </div>
             </div>

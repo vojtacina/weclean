@@ -31,7 +31,7 @@ const Home: NextPage = () => {
             </nav>
             <main className={"bg-white "}>
                 <MainJumbotron data={{
-                    image: "floors-bg.jpg", title: "Péče o podlahy a žulové schody Brno", subtitle: "Máme zkušenosti od roku 1996. Jsme precizní a profesionální.", buttons: [
+                    image: "floors-bg.jpg", title: "Péče o podlahy a kámen Brno", subtitle: "Máme zkušenosti od roku 1996. Jsme precizní a profesionální.", buttons: [
                         ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]
                     ]
                 }} />

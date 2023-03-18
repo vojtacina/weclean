@@ -40,7 +40,7 @@ function Header(props: Props) {
     return (
         <>
 
-            <div className={`absolute z-20 top-0 left-0 right-0 p-4 flex justify-between ${invert ? "text-black" : "text-white"} duration-200 ${scrollPosition > 48 && "bg-blue-darke"}`}>
+            <div className={`fixed z-20 top-0 left-0 right-0 p-4 flex justify-between ${invert ? "text-black" : "text-white"} duration-200 ${scrollPosition > 64 && "opacity-0"}`}>
                 <NextLink href='/' className="relative z-20 w-48 h-6 md:h-8">
                     <Image src={`/images/focuscleaning_${invert ? "black" : "white"}.svg`} priority fill className='object-contain object-left' alt="WeClean logo společnosti" />
                 </NextLink>

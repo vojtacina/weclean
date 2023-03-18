@@ -19,6 +19,7 @@ const formsDefault = {
         isDirty: false,
         isSmall: false
     },
+    changed: false
 } as FormsType
 
 

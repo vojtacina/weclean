@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       </nav>
       <main className={"bg-white "}>
         <MainJumbotron data={{
-          image: "carpets-bg.jpg", title: "Profesionální úklid a čištění koberců Brno", subtitle: "Zkušenosti od roku 1996", buttons: [
+          image: "index-bg.jpg", title: "Profesionální úklid a čištění koberců Brno", subtitle: "Zkušenosti od roku 1996", buttons: [
             ["Spočítat cenu", "#kalkulacka"],
             ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]
           ]
