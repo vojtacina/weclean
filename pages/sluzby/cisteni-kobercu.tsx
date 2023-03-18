@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useContext, useState } from 'react'
 import { CalcFormContext } from '../../components/contexts/CalcFormContext';
+import FixedButton from '../../components/fragments/FixedButton';
 import CalculatorSection from '../../components/sections/CalculatorSection';
 import CarpetsBanner from '../../components/sections/CarpetsBanner';
 import ContactBlock from '../../components/sections/ContactBlock';
@@ -52,9 +53,7 @@ const Home: NextPage = () => {
         <CarpetsBanner data={{ image: "bannerbg.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
         <ContactBlock />
       </main>
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40 md:hidden px-4">
-        <Button className='shadow-lg' primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Spočítat cenu</Button>
-      </div>
+      <FixedButton>Spočítat cenu</FixedButton>
       <footer className={""}>
         <Footer />
       </footer>

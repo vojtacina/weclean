@@ -13,7 +13,7 @@ function FixedButton(props: Props) {
 
     return (
         <div className={`fixed bottom-4 left-0 right-0 flex justify-center z-40 ${!preferences.modalSent && "md:hidden" } px-4`}>
-            <Button className={`shadow-lg ${preferences.modalSent && "bg-slate-800 hover:bg-slate-800 cursor-not-allowed"}`} primary onClick={() => setPreferences({ ...preferences, modalOpened: preferences?.modalSent ? false : true })}>{preferences?.modalSent ? "Brzy se Vám ozveme 🙂" : props.children}</Button>
+            <Button className={`shadow-lg ${preferences.modalSent && "  bg-green-call hover:bg-green-call cursor-not-allowed"}`} primary onClick={() => setPreferences({ ...preferences, modalOpened: preferences?.modalSent ? false : true })}>{preferences?.modalSent ? "Brzy se Vám ozveme 🙂" : props.children}</Button>
         </div>
     )
 }

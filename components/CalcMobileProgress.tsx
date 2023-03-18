@@ -6,19 +6,24 @@ import RadioGroup from "./UI/RadioGroup";
 import { Cross1Icon } from '@radix-ui/react-icons'
 import useCalculatedPrices from "./hooks/useCalculatedPrices";
 import TextField from "./UI/TextField";
-import { ArchiveTray, At, Envelope, EnvelopeSimple, HourglassMedium, PaperPlaneTilt, Phone, PhoneIncoming, User, X } from "phosphor-react"
+import { ArchiveTray, ArrowBendDownLeft, At, CheckCircle, Envelope, EnvelopeSimple, HourglassMedium, PaperPlaneTilt, Phone, PhoneIncoming, User, X } from "phosphor-react"
 import { price } from "./helpers/price";
 import Switch from "./UI/Switch";
 import { SwitchDataType } from "./types/SwitchTypes";
 import TextArea from "./UI/TextArea";
 import axios from "axios";
+import { post } from "./fetcher";
+import { H2 } from "./typography/H2";
+import { H3 } from "./typography/H3";
+import { Paragraph } from "./typography/Paragraph";
 
 export default function CalcMobileProgress({ close }: { close: () => void }) {
 
     const { preferences, setPreferences, forms } = useContext(CalcFormContext)
     const { priceFrom, priceTo } = useCalculatedPrices(preferences.type, forms)
 
-    const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
+    // const [step, setStep] = useState(window.innerWidth > 784 ? 3 : 1)
+    const [step, setStep] = useState(window.innerWidth > 784 ? 4 : 4)
     const [processing, setProcessing] = useState(false)
 
     function setSwitchData(data: { selected: string, options: Array<{ label: string, value: string }> }) {
@@ -51,7 +56,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
             if(forms.carpets.isSmall) {
                 details += ", malé nebo málo přístupné místnosti"
             }
-            details += ", vypočteno na " + priceFrom + " - " + priceTo
+            details += ", vypočteno na " + priceFrom + " - " + priceTo + " Kč"
         }
 
         if(details != "") {
@@ -66,7 +71,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
         setProcessing(true)
         if(!processing) {
             try {
-                const res = await axios.post("/api/notify", {
+                const res = await post("/api/notify", {
                     fullname: preferences.name,
                     contact: preferences.contactType == "phone" ? preferences.phone : preferences.email,
                     service: humanTextFromType(preferences.type),
@@ -173,7 +178,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </div>
                         </div>
                         <div className="block">
-                            <Button className={`${processing ? " bg-slate-300 hover:bg-slate-300 text-slate-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
+                            <Button className={`${processing ? " bg-zinc-300 hover:bg-zinc-300 text-zinc-800 cursor-not-allowed " : ""}`} primary onClick={() => send()}>
                                 <div className="flex items-center gap-x-1">
                                     {(processing) ? <HourglassMedium /> :(preferences?.contactType == "phone") ? <PhoneIncoming size={24} /> : <PaperPlaneTilt size={24} />}
                                     <div className="text-lg">{processing ? "Ověřování..." : "Potvrdit"}</div>
@@ -181,6 +186,18 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             </Button>
                         </div>
 
+                    </div>
+                </div>
+            }
+            {step == 4 &&
+                <div className="w-full p-4 flex flex-col gap-8px items-center md:max-w-xs">
+                    <div className="text-green-call mb-4">
+                        <CheckCircle size={64} weight="thin" />
+                    </div>
+                    <H3>Poptávka odeslána</H3>
+                    <Paragraph className="text-center">Vaše poptávka byla úspěšně doručena a budeme Vás brzy kontaktovat. Těšíme se na spolupráci.</Paragraph>
+                    <div className="mt-4 md:hidden">
+                        <Button link>Zavřít</Button>
                     </div>
                 </div>
             }

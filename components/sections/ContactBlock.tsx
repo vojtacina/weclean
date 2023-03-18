@@ -47,12 +47,8 @@ export default function ContactBlock() {
                         <div className="relative w-full h-96 rounded-lg overflow-hidden">
                             <Image src="/images/map.png" fill className="object-cover" alt={"Oblast působení - Morava"} />
                         </div>
-                    </div>
-                    <div className="md:col-span-2">
-                        <div className="mt-12">
-                            <div className="font-semibold">Obslužná oblast: Brno a okolí</div>
-                            <div className="text-gray-600">Bohunice, Bosonohy, Brněnské Ivanovice, Bystrc, Černá Pole, Černovice, Dolní Heršpice, Dvorska, Holásky, Horní Heršpice, Husovice, Chrlice, Ivanovice, Jehnice, Jundrov, Kníničky, Kohoutovice, Komárov, Komín, Královo Pole, Lesná, Líšeň, Maloměřice, Medlánky, Mokrá Hora, Nový Lískovec, Obřany, Ořešín, Pisárky, Ponava, Přízřenice, Řečkovice, Sadová, Slatina, Soběšice, Staré Brno, Starý Lískovec, Stránice, Štýřice, Trnitá, Tuřany, Útěchov u Brna, Veveří, Zábrdovice, Žabovřesky, Žebětín, Židenice, Zábřeh, Šumperk, Mohelnice, Jeseník, Olomouc, Šternberk, Bruntál, Přerov</div>
-                        </div>
+                        <div className="font-semibold mt-4">Obslužná oblast: Brno, Olomouc a okolí</div>
+                        <div className="text-gray-600">Působíme na celé Moravě a rádi za vámi dojedeme. </div>
                     </div>
                 </div>
             </MaxWidthWrapper>
