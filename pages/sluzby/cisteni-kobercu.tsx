@@ -25,10 +25,17 @@ const Home: NextPage = () => {
       <Head>
         <title>Čištění koberců Brno a okolí — Focus Cleaning</title>
         <meta name="description" content="Profi extrakční čištění koberců pro komerční zákazníky. Více než 25 zkušeností. On-line kalkulace ceny zdarma a hned. Jsme tu od roku 1996. " />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://focuscleaning.cz/sluzby/cisteni-kobercu" />
+        <meta property="og:title" content="Čištění koberců Brno a okolí — Focus Cleaning" />
+        <meta property="og:description" content="Profi extrakční čištění koberců pro komerční zákazníky. Více než 25 zkušeností. On-line kalkulace ceny zdarma a hned. Jsme tu od roku 1996." />
+        <meta property="og:image" content="https://focuscleaning.cz/images/carpets-bg.jpg"></meta>
       </Head>
-      <nav>
-        <Header />
-      </nav>
+
+      <Header />
+
       <main className={"bg-white "}>
         <MainJumbotron data={{
           image: "carpets-bg.jpg", title: "Profesionální čištění koberců Brno a okolí", subtitle: "Zkušenosti od roku 1996", buttons: [
@@ -38,7 +45,7 @@ const Home: NextPage = () => {
         }} />
         <ServicesSection data={[
           { title: "Kancelářské prostory", description: "Běžně čistíme koberce klientům v kancelářských prostorách a to i těch, jejichž rozloha se blíží 1000 m²." },
-          { title: "Židle, křesla, pohovky", description: "Dokážeme precizně vyčistit extrakční metodou čalounění židlí, křesel, matrací a pohovek."},
+          { title: "Židle, křesla, pohovky", description: "Dokážeme precizně vyčistit extrakční metodou čalounění židlí, křesel, matrací a pohovek." },
           { title: "Kusové koberce", description: "Pokud se ve vašich prostorách nacházejí i menší kusové koberce, vyčistíme je také obdobným způsobem, jako ty velké." }
         ]} />
         <WhyChooseUs />
@@ -54,9 +61,7 @@ const Home: NextPage = () => {
         <ContactBlock />
       </main>
       <FixedButton>Spočítat cenu</FixedButton>
-      <footer className={""}>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   )
 }

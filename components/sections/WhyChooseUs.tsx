@@ -27,16 +27,16 @@ function WhyChooseUs(props: Props) {
     const { image } = props
 
     return (
-        <div className="w-full py-2 md:py-24 relative">
+        <section className="w-full py-2 md:py-24 relative">
             <div className="hidden md:block absolute left-0 top-0 bottom-0 right-0 pointer-events-none">
                 <div className="w-2/5 h-full rounded-r-3xl overflow-hidden relative">
-                    <Image src={image ? `/images/${image}` : "/images/vacuum.jpg"} layout="fill" objectFit='cover' alt="Žena s vysavačem, úklidová firma" />
+                    <Image src={image ? `/images/${image}` : "/images/vacuum.jpg"} fill className='object-cover' alt="Žena s vysavačem, úklidová firma" />
                 </div>
             </div>
             <MaxWidthWrapper>
                 <div className="grid md:grid-cols-2">
                     <div className="md:hidden w-full relative h-48 rounded-lg overflow-hidden mb-8">
-                        <Image src={image ? `/images/${image}` : "/images/vacuum.jpg"} layout="fill" objectFit='cover' alt="Žena s vysavačem, úklidová firma" />
+                        <Image src={image ? `/images/${image}` : "/images/vacuum.jpg"} fill className="object-cover" alt="Žena s vysavačem, úklidová firma" />
                     </div>
                     <div className="hidden md:block"></div>
                     <div className="">
@@ -51,7 +51,7 @@ function WhyChooseUs(props: Props) {
 
                 </div>
             </MaxWidthWrapper>
-        </div>
+        </section>
     )
 }
 

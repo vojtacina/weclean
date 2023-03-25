@@ -58,8 +58,8 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                                 <div className="mt-8">
                                     <div className="flex justify-between">
                                         <div className="">
-                                            <div className="text-2xl">Celková cena <span className="text-blue-dark font-medium">od {price(priceFrom)}</span></div>
-                                            <div className="text-gray-500">(maximálně však {price(priceTo)})</div>
+                                            <div className="text-2xl">Celková cena <span className="text-blue-dark font-medium">{"od " + price(priceFrom)}</span></div>
+                                            <div className="text-gray-500">{"(maximálně však " + price(priceTo) + ")"}</div>
                                         </div>
                                         <div className="">
                                             <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Nezávazně poptat</Button>
@@ -77,20 +77,20 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                         <div className="w-full flex justify-center text-blue-primary">
                             <ShieldCheck size={100} weight="fill" />
                         </div>
-                        <div className="mt-6">
+                        <p className="mt-6">
                             Snažíme se odvádět poctivou, pečlivou a kvalitní práci. Přesně takovou, za jakou chcete platit.
-                        </div>
-                        <div className=" my-4 text-lg font-medium text-black">
+                        </p>
+                        <p className=" my-4 text-lg font-medium text-black">
                             Určitě budete spokojeni i vy!
-                        </div>
-                        <div>
+                        </p>
+                        <p>
                             Spokojenost potvrzují i známé firmy, které s námi spolupracují.
-                        </div>
+                        </p>
                         <div className="w-full h-12 relative my-4">
-                            <Image src="/images/references.png" alt="Loga firem našich klientů" className=" md:object-left" layout="fill" objectFit="contain" />
+                            <Image src="/images/references.png" alt="Loga firem našich klientů" className=" md:object-left object-contain" fill />
                             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-r from-transparent to-blue-bg"></div>
                         </div>
-                        <Link href={"/o-nas#klienti"}>
+                        <Link href={"/o-nas#klienti"} title="Další reference">
                             <Button>Zobrazit další reference</Button>
                         </Link>
 
@@ -133,7 +133,7 @@ export function CarpetsCalculator() {
 
 
     return (
-        <div className="">
+        <section className="">
             <div className="">
                 <div className="flex items-center justify-between">
                     <label htmlFor="area">Plocha koberců</label>
@@ -166,11 +166,11 @@ export function CarpetsCalculator() {
                 </div>
             </div>
             <div className="mt-8 hidden md:block">
-                <div className="w-full bg-gray-100 rounded p-4">
+                <p className="w-full bg-gray-100 rounded p-4">
                     Po odeslání poptávky vám zavoláme a domluvíme se na termínu a možnostech dokončení zakázky.
-                </div>
+                </p>
             </div>
 
-        </div>
+        </section>
     )
 }

@@ -20,7 +20,7 @@ function FeaturedPngSection(props: Props) {
     const { data } = props
 
     return (
-        <div className="w-full py-8 md:py-24 overflow-hidden">
+        <section className="w-full py-8 md:py-24 overflow-hidden">
             <MaxWidthWrapper>
                 <div className="w-full grid md:grid-cols-5">
                     <div className="md:col-span-3 md:pr-24 order-2 md:order-1 mt-8 md:mt-0">
@@ -38,13 +38,13 @@ function FeaturedPngSection(props: Props) {
                         <div className="w-full h-full rounded-3xl bg-blue-bg"></div>
                         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                             <div className="w-full h-full relative scale-150 pointer-events-none">
-                                <Image src={`/images/${data.image}`} alt="Čistící stroj Cimex" layout='fill' objectFit='contain' />
+                                <Image src={`/images/${data.image}`} alt="Čistící stroj Cimex" fill className='object-contain' />
                             </div>
                         </div>
                     </div>
                 </div>
             </MaxWidthWrapper>
-        </div>
+        </section>
     )
 }
 

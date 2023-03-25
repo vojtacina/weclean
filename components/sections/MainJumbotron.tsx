@@ -22,7 +22,7 @@ export default function MainJumbotron({ data }: {
     const image = require(`../../public/images/${data.image}`)
 
     return (
-        <div className=" w-full relative flex items-center justify-start bg-black min-h-screen md:min-h-0">
+        <section className=" w-full relative flex items-center justify-start bg-black min-h-screen md:min-h-0">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-opacity-30 bg-black z-10"></div>
             <Image src={image} priority fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className=" py-24 lg:py-48  text-white w-full z-10">
@@ -30,10 +30,10 @@ export default function MainJumbotron({ data }: {
                     <div className="">
                         <div className="">
                             <h1 className=" text-3xl font-semibold md:text-4xl lg:text-5xl mb-1">{data.title}</h1>
-                            <div className="text-xl opacity-75 font-light">{data.subtitle}</div>
+                            <p className="text-xl opacity-75 font-light">{data.subtitle}</p>
 
                             <div className="mt-4 text-xl font-light md:flex items-center gap-x-2">
-                                <div className="opacity-75 mb-4 md:mb-0">Zavolejte nám:</div>
+                                <p className="opacity-75 mb-4 md:mb-0">Zavolejte nám:</p>
                                 <a href="tel:777772054" className="md:hidden">
                                     <Button primary className=" bg-green-call hover:bg-green-call">
                                         <div className="flex items-center gap-x-1">
@@ -60,6 +60,6 @@ export default function MainJumbotron({ data }: {
 
 
             </div>
-        </div>
+        </section>
     )
 }

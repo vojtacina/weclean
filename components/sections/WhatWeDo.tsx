@@ -10,9 +10,9 @@ function WhatWeDo(props: Props) {
     const {} = props
 
     return (
-        <div className="">
+        <section className="">
             <MaxWidthWrapper>
-                <div className="pb-8 md:pb-24 grid md:grid-cols-3 gap-4 md:gap-8">
+                <div className="pt-8 md:pt-24 grid md:grid-cols-3 gap-4 md:gap-8">
                     <div className="">
                         <H2>Jaké úklidy provádíme?</H2>
                     </div>
@@ -28,7 +28,7 @@ function WhatWeDo(props: Props) {
                     </div>
                 </div>
             </MaxWidthWrapper>
-        </div>
+        </section>
     )
 }
 

@@ -25,10 +25,17 @@ const Home: NextPage = () => {
             <Head>
                 <title>Péče o podlahy a žulové schody Brno — Focus Cleaning</title>
                 <meta name="description" content="Obnova žulových schodišť, broušení podlah a aplikace polymerních vosků. Prodlužujeme životnost vašeho majetku. Více než 25 let zkušeností. Jsme tu od roku 1996." />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://focuscleaning.cz/sluzby/pece-o-podlahy" />
+                <meta property="og:title" content="Péče o podlahy a žulové schody Brno — Focus Cleaning" />
+                <meta property="og:description" content="Obnova žulových schodišť, broušení podlah a aplikace polymerních vosků. Prodlužujeme životnost vašeho majetku. Více než 25 let zkušeností. Jsme tu od roku 1996." />
+                <meta property="og:image" content="https://focuscleaning.cz/images/floors-bg.jpg"></meta>
             </Head>
-            <nav>
-                <Header />
-            </nav>
+
+            <Header />
+
             <main className={"bg-white "}>
                 <MainJumbotron data={{
                     image: "floors-bg.jpg", title: "Péče o podlahy a kámen Brno", subtitle: "Máme zkušenosti od roku 1996. Jsme precizní a profesionální.", buttons: [
@@ -46,9 +53,7 @@ const Home: NextPage = () => {
                 <ContactBlock />
             </main>
             <FixedButton>Nezávazně poptat</FixedButton>
-            <footer className={""}>
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     )
 }

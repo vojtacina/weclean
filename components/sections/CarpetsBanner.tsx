@@ -19,14 +19,14 @@ export default function CarpetsBanner({ data }: {
     const image = require(`../../public/images/${data?.image}`)
 
     return (
-        <div className=" w-full relative flex items-center justify-start overflow-hidden">
+        <section className=" w-full relative flex items-center justify-start overflow-hidden">
             <Image src={image} fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
             <div className=" py-8 md:py-24  text-white w-full z-10">
                 <MaxWidthWrapper>
                     <div className="md:w-1/3">
                         <div className="">
                             <h2 className=" text-2xl mb-1 font-semibold">{data.title}</h2>
-                            <div className="opacity-75 font-light mt-4">{data.description}</div>
+                            <p className="opacity-75 font-light mt-4">{data.description}</p>
                         </div>
                         <div className="mt-8 flex items-center gap-4">
                             {data.button &&
@@ -40,6 +40,6 @@ export default function CarpetsBanner({ data }: {
 
 
             </div>
-        </div>
+        </section>
     )
 }

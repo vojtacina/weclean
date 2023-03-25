@@ -11,7 +11,7 @@ export default function ServicesSection({ data }: { data: Array<{ title: string,
 
 
     return (
-        <div className="mt-2 py-8 md:py-12 xl:py-24">
+        <section className="mt-2 py-8 md:py-12 xl:py-24">
             <MaxWidthWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                     {data?.map((service, i) => (
@@ -22,7 +22,7 @@ export default function ServicesSection({ data }: { data: Array<{ title: string,
                 </div>
 
             </MaxWidthWrapper>
-        </div>
+        </section>
     )
 }
 

@@ -14,7 +14,7 @@ function Footer(props: Props) {
     const {preferences, setPreferences} = useContext(CalcFormContext)
 
     return (
-        <div id="zapati" className="w-full py-12 bg-gray-100">
+        <footer id="zapati" className="w-full py-12 bg-gray-100">
             <MaxWidthWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                     <div className="">
@@ -45,7 +45,7 @@ function Footer(props: Props) {
                     </div>
                 </div>
             </MaxWidthWrapper>
-        </div>
+        </footer>
     )
 }
 

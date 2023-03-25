@@ -22,12 +22,19 @@ const Home: NextPage = () => {
   return (
     <div className={"font-archivo bg-gray-100"}>
       <Head>
-        <title>Focus Cleaning - Profesionální úklid a čištění koberců Brno</title>
-        <meta name="description" content="Zajišťujeme úklidové služby a čištění koberců pro firmy a průmysl již od roku 1996. On-line kalkulace ceny zdarma a hned. Více než 25 let zkušeností. Jsme fér." />
+        <title>Focus Cleaning - Kvalitní úklid a čištění koberců Brno</title>
+        <meta name="description" content="Zajišťujeme úklidové služby a čištění koberců pro firmy a průmysl již od roku 1996. On-line kalkulace ceny zdarma a hned. Více než 25 let zkušeností." />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://focuscleaning.cz/" />
+        <meta property="og:title" content="Focus Cleaning - Profesionální úklid a čištění koberců Brno" />
+        <meta property="og:description" content="Zajišťujeme úklidové služby a čištění koberců pro firmy a průmysl již od roku 1996. On-line kalkulace ceny zdarma a hned. Více než 25 let zkušeností." />
+        <meta property="og:image" content="https://focuscleaning.cz/images/index-bg.jpg"></meta>
       </Head>
-      <nav>
-        <Header />
-      </nav>
+
+
+      <Header />
       <main className={"bg-white "}>
         <MainJumbotron data={{
           image: "index-bg.jpg", title: "Profesionální úklid a čištění koberců Brno", subtitle: "Zkušenosti od roku 1996", buttons: [
@@ -53,9 +60,7 @@ const Home: NextPage = () => {
         <ContactBlock />
       </main>
       <FixedButton>Spočítat cenu</FixedButton>
-      <footer className={""}>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   )
 }
