@@ -36,7 +36,7 @@ function What({children}:{children: ReactNode}) {
 
     return(
         <div className="flex gap-2 items-center">
-            <div className="rounded bg-blue-bg text-blue-primary p-2">
+            <div className="rounded-md bg-blue-bg text-blue-primary p-2">
                 <ArrowRight size={24} />
             </div>
             <div className="">

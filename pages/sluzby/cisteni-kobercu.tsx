@@ -38,15 +38,15 @@ const Home: NextPage = () => {
 
       <main className={"bg-white "}>
         <MainJumbotron data={{
-          image: "carpets-bg.jpg", title: "Profesionální čištění koberců Brno a okolí", subtitle: "Zkušenosti od roku 1996", buttons: [
+          image: "carpets-bg.jpg", title: "Profesionální čištění koberců Brno a okolí", subtitle: "Se zkušeností od roku 1996", buttons: [
             ["Spočítat cenu", "#kalkulacka"],
             ["Přejít k objednávce", () => setPreferences({ ...preferences, modalOpened: true })]
           ]
         }} />
         <ServicesSection data={[
-          { title: "Kancelářské prostory", description: "Běžně čistíme koberce klientům v kancelářských prostorách a to i těch, jejichž rozloha se blíží 1000 m²." },
-          { title: "Židle, křesla, pohovky", description: "Dokážeme precizně vyčistit extrakční metodou čalounění židlí, křesel, matrací a pohovek." },
-          { title: "Kusové koberce", description: "Pokud se ve vašich prostorách nacházejí i menší kusové koberce, vyčistíme je také obdobným způsobem, jako ty velké." }
+          { title: "Kancelářské prostory", description: "Běžně našim klientům čistíme koberce v kancelářských prostorách, včetně těch o rozloze nad 1000 m²." },
+          { title: "Židle, křesla, pohovky", description: "Extrakční metodou dokážeme precizně vyčistit čalounění židlí, křesel, matrací či pohovek." },
+          { title: "Kusové koberce", description: "Vedle běhounů ve vašich kancelářích vyčistíme také menší i větší kusové koberce, které se tam nacházejí." }
         ]} />
         <WhyChooseUs />
         <FeaturedPngSection data={{

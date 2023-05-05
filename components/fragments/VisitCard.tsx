@@ -8,8 +8,8 @@ function VisitCard(props: Props) {
     const {} = props
 
     return (
-        <div className="border inline-flex items-center max-w-xs rounded border-gray-200 px-4 py-3">
-            <div className="w-20 h-20 flex-shrink-0 rounded-full relative overflow-hidden">
+        <div className="border inline-flex items-center max-w-xs rounded-md border-gray-200 px-4 py-3">
+            <div className="w-10 h-10 md:w-20 md:h-20 flex-shrink-0 rounded-full relative overflow-hidden">
                 <Image src={"/images/face.jpg"} blurDataURL={"/images/vojta.jpg"} alt="Fotka obličeje Viktora Ciny" fill className='object-cover'/>
             </div>
             <div className="flex flex-col items-start pl-4 text-left">

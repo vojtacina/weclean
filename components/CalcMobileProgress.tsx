@@ -132,10 +132,15 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                             <CarpetsCalculator />
                         </div>
 
-                        <div className="pt-4 flex-grow-0 flex-shrink-0 flex justify-between">
-                            <div className="pr-2">
-                                <div className="text-xl"><span className="text-black font-medium">od {price(priceFrom)}</span></div>
-                                <div className="text-gray-500 text-xs font-light">(max. {price(priceTo)})</div>
+                        <div className="pt-4 flex-grow-0 flex-shrink-0 md:flex justify-between">
+                            <div className="pr-2 mb-4 md:mb-0 flex justify-between items-center">
+                                <div className="">
+                                    <div className="text-gray-500">Celková cena:</div>
+                                </div>
+                                <div className="text-right">
+                                    <div className="text-xl"><span className="text-black font-medium">od {price(priceFrom)}</span></div>
+                                    <div className="text-gray-500 text-xs font-light">(max. {price(priceTo)})</div>
+                                </div>
                             </div>
                             <Button primary onClick={() => setStep(3)}>Další krok</Button>
                         </div>

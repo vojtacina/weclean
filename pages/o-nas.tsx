@@ -53,7 +53,6 @@ function Onas(props: Props) {
             <main className={"bg-white "}>
                 <div className="pt-32 pb-8">
                     <MaxWidthWrapper>
-
                         <div className="md:px-32">
                             <H1 className='md:text-5xl font-bold text-center'>O firmě Focus Cleaning</H1>
                             <div className="mt-8">
@@ -68,7 +67,7 @@ function Onas(props: Props) {
                         <div id="klienti" className="mt-12 pt-12">
                             <H2 className='text-center'>Naši spokojení klienti</H2>
                             <Paragraph className='text-center md:px-64'>Více než 25 let poskytujeme služby firmám a jednotlivcům. Za tu dobu jde například o tyto firmy:</Paragraph>
-                            <div className="grid mt-8 grid-cols-2 md:grid-cols-4 gap-6">
+                            <div className="grid mt-8 grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
                                 {clients.map(client => (
                                     <div key={`client_${client.name}`} className="">
                                         <Client name={client.name} logo={client.logo ?? ""} description={client.description} url={client.url} />
@@ -111,7 +110,7 @@ function Client({ name, logo, description, url }: {
                 <Paragraph className='text-center'>{description}</Paragraph>
             </div>
 
-            <div className={`w-32 h-32 group-hover:opacity-0 opacity-100 duration-300 flex-shrink-0 rounded overflow-hidden relative bg-white pl-2`}>
+            <div className={`w-32 h-32 group-hover:opacity-0 opacity-100 duration-300 flex-shrink-0 rounded-md overflow-hidden relative bg-white pl-2`}>
                 <div className="relative w-full h-full">
                     <Image src={`/images/${logo}`} fill alt={`Logo společnosti ${name}`} className="object-contain" />
                 </div>
@@ -134,7 +133,7 @@ function ClientOld({ name, logo, description, url }: {
                 <Paragraph>{description}</Paragraph>
             </div>
 
-            <div className="w-16 h-16 flex-shrink-0 rounded overflow-hidden relative bg-white pl-2">
+            <div className="w-16 h-16 flex-shrink-0 rounded-md overflow-hidden relative bg-white pl-2">
                 <div className="relative w-full h-full">
                     <Image src={`/images/${logo}`} fill alt={`Logo společnosti ${name}`} className="object-contain" />
                 </div>

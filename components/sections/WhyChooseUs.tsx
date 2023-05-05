@@ -1,20 +1,32 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import MaxWidthWrapper from '../MaxWidthWrapper'
 import { H1 } from '../typography/H1'
 import { H2 } from '../typography/H2'
 import { H3 } from '../typography/H3'
 import { Paragraph } from '../typography/Paragraph'
+import { CaretDown, CaretUp } from 'phosphor-react'
 
 function WhySingle({ title, description }: {
     title: string,
     description: string
 }) {
 
+    const [opened, setOpened] = useState(false)
+
     return (
-        <div className="">
-            <H3>{title}</H3>
-            <Paragraph>{description}</Paragraph>
+        <div onClick={() => setOpened(!opened)} className="">
+            <div className="flex justify-between">
+                <H3>{title}</H3>
+                <div className="md:hidden">
+                    {opened ? <CaretUp size={24} /> : <CaretDown size={24} />}
+                </div>
+            </div>
+            {opened &&
+            <Paragraph className='md:hidden'>{description}</Paragraph>
+            }
+
+            <Paragraph className='hidden md:block'>{description}</Paragraph>
         </div>
     )
 }
@@ -43,9 +55,9 @@ function WhyChooseUs(props: Props) {
                         <H2>Proč si vybrat nás</H2>
                         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <WhySingle title="Máme zkušenosti" description='Pro naše klienty pracujeme od roku 1996. Za tu dobu jsme se stali skutečnými odborníky.' />
-                            <WhySingle title="Rychlá a jasná domluva" description='Dokážeme se flexibilně se zákazníkem domluvit na termínu i technologii. Včas a jasně.' />
-                            <WhySingle title="Nebojíme se výzev" description='Máme větší množství profesionálních čistících strojů a neodradí nás ani velké prostory nebo zažraná špína.' />
-                            <WhySingle title="Pracujeme i o víkendu" description='Pokud je to pro provoz vašeho podnikání nutné, můžeme se na čištění nebo úklidu domluvit i o víkendu.' />
+                            <WhySingle title="Rychlá a jasná domluva" description='Se zákazníkem se dokážeme flexibilně domluvit na termínu i technologii. Jasně a včas.' />
+                            <WhySingle title="Nebojíme se výzev" description='Disponujeme širokou škálou strojového vybavení, používáme nejmodernější technologické postupy.' />
+                            <WhySingle title="Pracujeme i o víkendu" description='Pokud to provoz vašeho podnikání vyžaduje, jsme po dohodě schopni provést čištění nebo úklidové práce i o víkendu.' />
                         </div>
                     </div>
 

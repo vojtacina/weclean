@@ -19,27 +19,28 @@ export default function CarpetsBanner({ data }: {
     const image = require(`../../public/images/${data?.image}`)
 
     return (
-        <section className=" w-full relative flex items-center justify-start overflow-hidden">
-            <Image src={image} fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
-            <div className=" py-8 md:py-24  text-white w-full z-10">
-                <MaxWidthWrapper>
-                    <div className="md:w-1/3">
-                        <div className="">
-                            <h2 className=" text-2xl mb-1 font-semibold">{data.title}</h2>
-                            <p className="opacity-75 font-light mt-4">{data.description}</p>
+        <section className="p-4 md:p-0">
+            <div className=" w-full relative flex items-center justify-start overflow-hidden rounded-lg md:rounded-none shadow-lg">
+                <Image src={image} fill className="z-0 object-cover" placeholder="blur" alt="Extrakční čištění koberců - WeClean" />
+                <div className=" py-4 md:py-24  text-white w-full z-10 bg-black bg-opacity-30">
+                    <MaxWidthWrapper>
+                        <div className="md:w-1/3">
+                            <div className="">
+                                <h2 className=" text-2xl mb-1 font-medium mt-4">{data.title}</h2>
+                                <p className="opacity-75 font-light mt-4">{data.description}</p>
+                            </div>
+                            <div className="mt-8 flex items-center gap-4">
+                                {data.button &&
+                                    <div className="w-full md:w-auto">
+                                        <RenderButton button={data.button} primary />
+                                    </div>
+                                }
+                            </div>
                         </div>
-                        <div className="mt-8 flex items-center gap-4">
-                            {data.button &&
-                                <div className="w-full md:w-auto">
-                                    <RenderButton button={data.button} primary />
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </MaxWidthWrapper>
-
-
+                    </MaxWidthWrapper>
+                </div>
             </div>
         </section>
+
     )
 }

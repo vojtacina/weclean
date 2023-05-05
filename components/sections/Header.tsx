@@ -63,7 +63,7 @@ function Header(props: Props) {
                     </ContextMenu>
                 </nav>
             </header>
-            {(scrollPosition > 500) &&
+            {(scrollPosition > 400) &&
                 <nav className="fixed top-4 right-4 z-20">
                     <ContextMenu options={[
                         { value: "/sluzby/cisteni-kobercu", text: "Čištění koberců" },

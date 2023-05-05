@@ -32,7 +32,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
     }, []);
 
     return (
-        <div id="kalkulacka" className="mt-2 py-8 md:py-16">
+        <div id="kalkulacka" className="py-2 md:py-16">
             <div className="w-full hidden md:flex justify-center">
                 <h2 className="text-2xl md:text-4xl">Kalkulace předběžné ceny</h2>
             </div>
@@ -72,16 +72,16 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                             <NoFormMessage subtitle={`Určit cenu za ${preferences.type == "cleaning" ? "úklid kanceláří" : "obnovu povrchů, broušení schodišť a další služby"} je velmi individuální. Rádi vám předběžnou cenu ale sdělíme po předání bližších informací o vaší zakázce.`} />
                         }
                     </div>
-                    <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded">
+                    <div className="md:col-span-3 font-normal text-center md:text-left text-gray-600 bg-blue-bg p-6 rounded-lg">
 
                         <div className="w-full flex justify-center text-blue-primary">
                             <ShieldCheck size={100} weight="fill" />
                         </div>
                         <p className="mt-6">
-                            Snažíme se odvádět poctivou, pečlivou a kvalitní práci. Přesně takovou, za jakou chcete platit.
+                            Snažíme se odvádět poctivou, pečlivou a kvalitní práci. Přesně takovou, o jakou máte zájem.
                         </p>
                         <p className=" my-4 text-lg font-medium text-black">
-                            Určitě budete spokojeni i vy!
+                            Spokojeni určitě budete i vy!
                         </p>
                         <p>
                             Spokojenost potvrzují i známé firmy, které s námi spolupracují.
@@ -106,7 +106,7 @@ export function NoFormMessage({ subtitle, buttonAction }: { subtitle: string, bu
     const { preferences, setPreferences } = useContext(CalcFormContext)
 
     return (
-        <div className="w-full md:h-full bg-gray-100 rounded flex items-center py-4 md:py-8 px-4 md:px-16">
+        <div className="w-full md:h-full bg-gray-100 rounded-md flex items-center py-4 md:py-8 px-4 md:px-16">
             <div className="flex-col justify-center items-center text-center">
                 <H2 className="mb-4">Pro cenový odhad nás prosím kontaktujte</H2>
                 <Paragraph className="mb-4">{subtitle}</Paragraph>
@@ -162,12 +162,12 @@ export function CarpetsCalculator() {
                     <Checkbox label="Koberce jsou silně znečištěné" checked={forms.carpets.isDirty} setChecked={(to) => setForms({ ...forms, carpets: { ...forms.carpets, isDirty: to } })} />
                 </div>
                 <div className="mt-2">
-                    <Checkbox label="Místnosti jsou členité a obashují nábytek, židle apod." checked={forms.carpets.isSmall} setChecked={(to) => setForms({ ...forms, carpets: { ...forms.carpets, isSmall: to } })} />
+                    <Checkbox label="Místnosti jsou členité, vybavené nábytkem, židlemi apod." checked={forms.carpets.isSmall} setChecked={(to) => setForms({ ...forms, carpets: { ...forms.carpets, isSmall: to } })} />
                 </div>
             </div>
             <div className="mt-8 hidden md:block">
-                <p className="w-full bg-gray-100 rounded p-4">
-                    Po odeslání poptávky vám zavoláme a domluvíme se na termínu a možnostech dokončení zakázky.
+                <p className="w-full bg-gray-100 rounded-md p-4">
+                    Po odeslání poptávky vám zavoláme a domluvíme termín a možnosti dokončení vaší zakázky.
                 </p>
             </div>
 

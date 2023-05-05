@@ -43,13 +43,19 @@ const Home: NextPage = () => {
                     ]
                 }} />
                 <ServicesSection data={[
-                    { title: "Žulové schody", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." },
-                    { title: "Voskování podlah", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." },
-                    { title: "Broušení žuly", description: "Profesionální čištění koberců extrakční metodou i u vás doma. Používáme kvalitní techniku a chemii firmy Karcher." }
+                    { title: "Strojové čištění podlah", description: "Strojové čištění podlah provádíme ve školách, komerčních zónách i v hotelech. Vyčištěná podlaha je jako nová a ihned suchá. Čištění provádíme tříkartáčovým podlahovým strojem Cimex, který využívá vstřikování chemického přípravku na rotující kartáče." },
+                    { title: "Voskování podlah", description: "Voskování chrání povrch podlahy před nadměrným opotřebením. Ošetřená podlaha se méně špiní, je odolnější a snadněji se udržuje. Má také velmi dobré protiskluzové vlastnosti. Voskování se hodí do hotelů, škol, firem i dalších prostorů." },
                 ]} />
                 <WhyChooseUs image="hands.jpg" />
+                <FeaturedPngSection data={{
+                    logosImage: "brands.png",
+                    title: 'Používáme špičkovou techniku',
+                    description: 'Čištění provádíme tříkartáčovým podlahovým strojem Cimex, který využívá vstřikování chemického přípravku na rotující kartáče a po důkladném vyčištění odsaje znečištěnou vodu. Při práci postupujeme s maximální ohleduplností, aby nedošlo k poškození majetku našich zákazníků. Pokud budete s naší službou spokojeni a objednáte si ji znovu, můžete získat věrnostní slevu zákazníka.',
+                    button: ["Více o nás", "/o-nas"],
+                    image: 'cimex.png'
+                }} />
                 <CalculatorSection select="floors" />
-                <CarpetsBanner data={{ image: "duo-floor.jpg", title: "Více než 25 let pečujeme o naše klienty", description: "Výsledkem našeho úsilí je příjemné a čisté prostředí jako nezbytný předpoklad nejen pro osobnostní růst každého jednotlivce, ale také pro úspěšné vykonávání každé další činnosti.", button: ["Více o nás", "/o-nas"] }} />
+                <CarpetsBanner data={{ image: "duo-floor.jpg", title: "Získejte věrnostní slevu!", description: "Pokud budete s naší službou spokojeni a objednáte si ji znovu, můžete získat věrnostní slevu zákazníka.", button: ["Více o nás", "/o-nas"] }} />
                 <ContactBlock />
             </main>
             <FixedButton>Nezávazně poptat</FixedButton>
