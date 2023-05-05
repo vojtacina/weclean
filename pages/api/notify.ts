@@ -17,7 +17,7 @@ export default async function handler(
   
   const msg = {
     to: process.env.SENDGRID_MAIL_TO, // Change to your recipient
-    from: 'jsem@vojtechcina.cz', // Change to your verified sender
+    from: 'vojtechvojt@email.cz', // Change to your verified sender
     template_id: "d-215349e3e95249b493cef925bc8c89e8",
     dynamic_template_data: data
   }
@@ -31,7 +31,7 @@ export default async function handler(
   if(data?.contact.includes("@")) {
     const msg = {
       to: process.env.SENDGRID_MAIL_TO, // Change to your recipient
-      from: 'jsem@vojtechcina.cz', // Change to your verified sender
+      from: 'vojtechvojt@email.cz', // Change to your verified sender
       template_id: "d-2bcbd2fc0702416d85141f9fe9c888a6",
       dynamic_template_data: data
     }
