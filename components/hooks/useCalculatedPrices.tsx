@@ -19,16 +19,16 @@ function calculatePrice(type: string, forms: FormsType, setPrices: Dispatch<SetS
     if (type == "carpets") {
 
         // Minimální cena
-        const minPrice = 1750
+        const minPrice = 1200
 
         // Cena za m2 [min, max]
-        const perMeter = [30, 40]
+        const perMeter = [33, 78]
 
         // Příplatek za m2 znečištěných koberců
-        const dirtyTax = [5, 15]
+        const dirtyTax = [25, 41]
 
         // Malá nebo nepřístupná místnost
-        const smallTax = [5, 15]
+        const smallTax = [40, 40]
 
         const fromPrice = minPrice + (forms[type].area * (perMeter[0] + (forms[type].isDirty ? dirtyTax[0] : 0) + (forms[type].isSmall ? smallTax[0] : 0))) 
         const toPrice = minPrice + (forms[type].area * (perMeter[1] + (forms[type].isDirty ? dirtyTax[1] : 0) + (forms[type].isSmall ? smallTax[1] : 0)))

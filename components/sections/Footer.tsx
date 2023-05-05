@@ -19,9 +19,9 @@ function Footer(props: Props) {
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                     <div className="">
                         FocusCleaning, s.r.o.<br />
-                        IČO: 24841943<br />
-                        Chlebovická 490<br />
-                        Praha 9 - Letňany, 199 00
+                        IČO: 63824191<br />
+                        Husova 655<br />
+                        Benešov u Prahy
                     </div>
                     <div className="flex flex-col justify-center">
                         <h2 className='font-medium text-lg'>Telefonický kontakt</h2>
