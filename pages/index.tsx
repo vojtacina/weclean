@@ -46,7 +46,7 @@ const Home: NextPage = () => {
         <ServicesSpecialSection data={[
           { title: "Čištění koberců", image: "carpets-bg.jpg" , description: "Čištění koberců v soukromé i průmyslové sféře zajišťujeme již více než 25 let. Používáme osvědčenou čisticí techniku od švýcarské firmy Cleanfix a britského Cimexu.", button: ["Více o čištění koberců", "/sluzby/cisteni-kobercu"] },
           { title: "Úklid kanceláří",  image: "cleaning-bg.jpg" ,description: "Zajistíme komplexní pravidelný i jednorázový úklid vašich kanceláří či administrativních budov. Zaručujeme vám profesionální a individuální přístup", button: ["Více o úklidech", "/sluzby/uklidove-sluzby"] },
-          { title: "Broušení povrchů",  image: "floors-bg.jpg" ,description: "S naším víceúčelovým strojem Cimex Cyclone zvládneme i broušení kamenných povrchů jako je žula nebo mramor. Zajišťujeme ochranné ošetření podlah a žulových schodů.", button: ["Více o této službě", "/sluzby/pece-o-podlahy"] }
+          { title: "Péče o podlahy",  image: "floors-bg.jpg" ,description: "S naším víceúčelovým strojem Cimex Cyclone zvládneme i broušení kamenných povrchů jako je žula nebo mramor. Zajišťujeme ochranné ošetření podlah a žulových schodů.", button: ["Více o této službě", "/sluzby/pece-o-podlahy"] }
         ]} />
         <WhyChooseUs image="hands.jpg" />
         <FeaturedPngSection data={{

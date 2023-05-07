@@ -59,7 +59,7 @@ export default function CalculatorSection({ select }: { select?: "carpets" | "cl
                                     <div className="flex justify-between">
                                         <div className="">
                                             <div className="text-2xl">Celková cena <span className="text-blue-dark font-medium">{"od " + price(priceFrom)}</span></div>
-                                            <div className="text-gray-500">{"(maximálně však " + price(priceTo) + ")"}</div>
+                                            {/* <div className="text-gray-500">{"(maximálně však " + price(priceTo) + ")"}</div> */}
                                         </div>
                                         <div className="">
                                             <Button primary onClick={() => setPreferences({ ...preferences, modalOpened: true })}>Nezávazně poptat</Button>

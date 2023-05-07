@@ -139,7 +139,7 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                                 </div>
                                 <div className="text-right">
                                     <div className="text-xl"><span className="text-black font-medium">od {price(priceFrom)}</span></div>
-                                    <div className="text-gray-500 text-xs font-light">(max. {price(priceTo)})</div>
+                                    {/* <div className="text-gray-500 text-xs font-light">(max. {price(priceTo)})</div> */}
                                 </div>
                             </div>
                             <Button primary onClick={() => setStep(3)}>Další krok</Button>

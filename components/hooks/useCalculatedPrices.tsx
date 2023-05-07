@@ -25,10 +25,10 @@ function calculatePrice(type: string, forms: FormsType, setPrices: Dispatch<SetS
         const perMeter = [33, 78]
 
         // Příplatek za m2 znečištěných koberců
-        const dirtyTax = [25, 41]
+        const dirtyTax = [15, 15]
 
         // Malá nebo nepřístupná místnost
-        const smallTax = [40, 40]
+        const smallTax = [9, 9]
 
         const fromPrice = minPrice + (forms[type].area * (perMeter[0] + (forms[type].isDirty ? dirtyTax[0] : 0) + (forms[type].isSmall ? smallTax[0] : 0))) 
         const toPrice = minPrice + (forms[type].area * (perMeter[1] + (forms[type].isDirty ? dirtyTax[1] : 0) + (forms[type].isSmall ? smallTax[1] : 0)))
