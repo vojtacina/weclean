@@ -34,7 +34,6 @@ const Home: NextPage = () => {
         <meta property="og:image" content="https://focuscleaning.cz/images/index-bg.jpg"></meta>
       </Head>
 
-
       <Header />
       <main className={"bg-white "}>
         <MainJumbotron data={{
