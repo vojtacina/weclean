@@ -41,15 +41,12 @@ function Service({ title, subtitle, button, image }: ServiceType) {
 
     return (
         <>
-            <Link href={button?.[1] as string ?? "/"} className="w-full h-full p-8 rounded-lg shadow-lg bg-black flex text-white relative overflow-hidden group cursor-pointer">
-                <div className="absolute top-0 left-0 right-0 bottom-0 bg-opacity-50 bg-black z-10 group-hover:opacity-50 duration-150"></div>
-                <Image src={img} fill className="z-0 object-cover" placeholder="blur" alt={title} />
-
+            <Link href={button?.[1] as string ?? "/"} className="w-full h-full p-8 flex relative group cursor-pointer border border-transparent rounded-lg hover:border-gray-200">
                 <div className="z-10 w-full h-full">
-                    <div className="flex justify-between text-white">
+                    <div className="flex justify-between text-black">
                         <H2>{title}</H2>
                     </div>
-                    <Paragraph className="text-white">{subtitle}</Paragraph>
+                    <Paragraph className="text-black">{subtitle}</Paragraph>
                 </div>
                 
             </Link>
