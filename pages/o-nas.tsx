@@ -49,7 +49,6 @@ function Onas(props: Props) {
 
             <Header invert />
             <div className="h-16 bg-white absolute top-0 left-0 right-0"></div>
-
             <main className={"bg-white "}>
                 <div className="pt-32 pb-8">
                     <MaxWidthWrapper>
