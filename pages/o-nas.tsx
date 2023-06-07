@@ -46,7 +46,6 @@ function Onas(props: Props) {
                 <meta property="og:description" content="Jsme firma s dlouholetou tradicí sahající až do roku 1996, kdy byla firma založena. Za tu dobu již máme spoustu referencí a dobrých hodnocení. 50+ klientů." />
                 <meta property="og:image" content="https://focuscleaning.cz/images/index-bg.jpg"></meta>
             </Head>
-
             <Header invert />
             <div className="h-16 bg-white absolute top-0 left-0 right-0"></div>
             <main className={"bg-white "}>
