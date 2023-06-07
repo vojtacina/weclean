@@ -74,7 +74,7 @@ function Onas(props: Props) {
                                     </div>
                                 ))}
                             </div>
-                            <Link target="_blank" className='mt-8 flex flex-col items-center w-full' title='Recenze a profil na Google' href="https://goo.gl/maps/hyjezDy8efRgtTsD8">
+                            <Link target="_blank" className='mt-8 flex flex-col items-center w-full' title='Recenze a profil na Google' href="https://www.google.com/search?sxsrf=APwXEdeL9bopcafaanQ3iJQ4O-q--okgQw%3A1686154747659&q=Focus%20Cleaning&stick=H4sIAAAAAAAAAONgU1I1qDBKTDSzSE5KTEpMMzAxszC3MqhIMTY0SzFLTrIws0yztLAwXsTK55afXFqs4JyTmpiXmZcOABd5vV86AAAA&mat=Cf2bIfEl2tba&ved=2ahUKEwjF0pT2x7H_AhVbSfEDHSbwBjsQrMcEegQICBAD&bshm=ncc/1">
                                 <div className="inline-flex">
                                     <Button primary className=''>
                                         <div className="flex items-center gap-x-2">

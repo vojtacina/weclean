@@ -204,13 +204,13 @@ export default function CalcMobileProgress({ close }: { close: () => void }) {
                 </form>
             }
             {step == 4 &&
-                <div className="w-full p-4 flex flex-col gap-8px items-center md:max-w-xs">
+                <div className="w-full p-4 flex flex-col gap-8px items-center md:max-w-xs relative">
                     <div className="text-green-call mb-4">
                         <CheckCircle size={64} weight="thin" />
                     </div>
                     <H3>Poptávka odeslána</H3>
                     <Paragraph className="text-center">Vaše poptávka byla úspěšně doručena a budeme Vás brzy kontaktovat. Těšíme se na spolupráci.</Paragraph>
-                    <div className="mt-4 md:hidden">
+                    <div className="mt-4">
                         <Button onClick={() => setPreferences({ ...preferences, modalOpened: false })} link>Zavřít</Button>
                     </div>
                 </div>
