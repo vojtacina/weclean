@@ -37,7 +37,6 @@ const Home: NextPage = () => {
         <meta property="og:description" content="Nabízíme komplexní pravidelné i jednorázové úklidové služby pro firmy a průmysl. On-line kalkulace ceny zdarma a hned. 50+ referencí. Jsme tu od roku 1996." />
         <meta property="og:image" content="https://focuscleaning.cz/images/cleaning-bg.jpg"></meta>
       </Head>
-
       <Header />
       <main className={"bg-white "}>
         <MainJumbotron data={{
