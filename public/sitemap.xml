@@ -1,24 +1,23 @@
-<xml version="1.0" encoding="UTF-8">
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <url>
-       <loc>https://focuscleaning.cz/</loc>
-       <lastmod>2023-03-25</lastmod>
-     </url>
-     <url>
-       <loc>https://focuscleaning.cz/o-nas</loc>
-       <lastmod>2023-03-25</lastmod>
-     </url>
-     <url>
-       <loc>https://focuscleaning.cz/sluzby/cisteni-kobercu</loc>
-       <lastmod>2023-03-25</lastmod>
-     </url>
-     <url>
-       <loc>https://focuscleaning.cz/sluzby/pece-o-podlahy</loc>
-       <lastmod>2023-03-25</lastmod>
-     </url>
-      <url>
-       <loc>https://focuscleaning.cz/sluzby/uklidove-sluzby</loc>
-       <lastmod>2023-03-25</lastmod>
-     </url>
-   </urlset>
-</xml>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://focuscleaning.cz/</loc>
+    <lastmod>2023-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://focuscleaning.cz/o-nas</loc>
+    <lastmod>2023-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://focuscleaning.cz/sluzby/cisteni-kobercu</loc>
+    <lastmod>2023-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://focuscleaning.cz/sluzby/pece-o-podlahy</loc>
+    <lastmod>2023-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://focuscleaning.cz/sluzby/uklidove-sluzby</loc>
+    <lastmod>2023-03-25</lastmod>
+  </url>
+</urlset>
